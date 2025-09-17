@@ -2,6 +2,7 @@ import email from '../../img/icones/mail.png'
 import tel from '../../img/icones/phone.png'
 import whats from '../../img/icones/whats.png'
 import Menu from '../Menu/Menu'
+import desenho from '../../img/desenho-saude-amiga.png'
 
 export default function Cabecalho() {
     return (
@@ -15,6 +16,7 @@ export default function Cabecalho() {
                     <a href="#" target="_blank"><img src={whats} alt="icone whatsapp"/>11 9 9999-9999 </a>
                 </div>
             </div>
+            <img src={desenho} alt="Uma senhora de idade e um senhor de idade cego desenhados no estilo cartunesco" />
             <Menu/>
         </header>
     )

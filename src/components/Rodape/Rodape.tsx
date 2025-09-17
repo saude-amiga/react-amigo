@@ -7,24 +7,14 @@ import linkedin from '../../img/icones/linkedin.png'
 import email_branco from '../../img/icones/mail-branco.png'
 import tel_branco from '../../img/icones/phone-branco.png'
 import whats_branco from '../../img/icones/whats-branco.png'
+import Menu from '../Menu/Menu'
 
 export default function Rodape(){
     return(
         <footer>
             <div>
                 <div>
-                    <ul>
-                        <li>
-                            <h1>Navegação</h1>
-                        </li>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Quem somos</a></li>
-                        <li><a href="#">Saúde Amiga</a></li>
-                        <li><a href="#">Oficinas</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contato</a></li>
-
-                    </ul>
+                    <Menu/>
 
                     <ul>
                         <li>

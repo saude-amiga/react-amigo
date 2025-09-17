@@ -1,22 +1,16 @@
 import menu_img from '../../img/icones/menu.png'
-import desenho from '../../img/desenho-saude-amiga.png'
+import { Link } from 'react-router-dom'
 
 export default function Menu() {
     return (
         <nav>
-            <img src={desenho} alt="Uma senhora de idade e um senhor de idade cego desenhados no estilo cartunesco" />
-
-            <nav>
-                <button><img src={menu_img} />MENU</button>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Quem somos</a></li>
-                    <li><a href="#">Saúde Amiga</a></li>
-                    <li><a href="#">Oficinas</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </nav>
+            <button><img src={menu_img} />MENU</button>
+            <Link to="/">Home</Link>
+            <Link to="/quem-somos">Quem Somos</Link>
+            <Link to="/saude-amiga">Saúde Amiga</Link>
+            <Link to="/oficinas">Oficinas</Link>
+            <Link to="/perguntas-frequentes">FAQ - Perguntas Frequentes</Link>
+            <Link to="/contato">Contato</Link>
         </nav>
     )
 }
