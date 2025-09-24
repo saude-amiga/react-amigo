@@ -16,6 +16,17 @@ export default function Home(){
                     <img src={banner3} alt="Idoso mexendo no tablet"/>
                 </div>
             </div>
+            <div>
+                <div>
+                    <section id="saude-amiga">
+                    <h1>Saúde Amiga</h1>
+                    <div></div>
+                    <p>Somos a solução para os problemas de acesso no aplicativo Portal do Paciente HC, venha conhecer nosso
+                        aplicativo e fique por dentro de tudo que o HC pode proporcionar</p>
+                    <Link to='/saude-amiga'>Saiba mais ...</Link>
+                </section>
+                </div>
+            </div>
         </body>
     )
 }
