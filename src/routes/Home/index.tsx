@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom'
 import banner1 from '../../img/banner/banner1.jpg'
 import banner2 from '../../img/banner/banner2.jpg'
 import banner3 from '../../img/banner/banner3.jpg'
