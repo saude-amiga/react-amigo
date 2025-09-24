@@ -1,5 +1,8 @@
 import facebook from '../../img/icones/facebook.png'
 import instagram from '../../img/icones/instagram.png'
+import x_twitter from '../../img/icones/x-twitter.png'
+import tiktok from '../../img/icones/tiktok.png'
+import telegram from '../../img/icones/telegram.png'
 import linkedin from '../../img/icones/linkedin.png'
 
 export default function Contato(){
@@ -13,6 +16,9 @@ export default function Contato(){
                     <li><a><img src={facebook} alt=""/>Facebook</a></li>
                     <li><a><img src={instagram} alt=""/>Instagram</a></li>
                     <li><a><img src={linkedin} alt=""/>LinkedIn</a></li>
+                    <li><a><img src={telegram} alt="Ícone do Telegram"/>Telegram</a></li>
+                    <li><a><img src={tiktok} alt="Ícone do Tik Tok"/>TikTok</a></li>
+                    <li><a><img src={x_twitter} alt="Ícone do X / Twitter"/>X</a></li>
                 </section>
             </main>
         </body>
