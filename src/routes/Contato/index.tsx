@@ -1,7 +1,13 @@
 export default function Contato(){
     return(
-        <div>
-            <p>Contato</p>
-        </div>
+        <body>
+            <main>
+                <section id="contato">
+                    <div>
+                        <h1>Contato</h1>
+                    </div>
+                </section>
+            </main>
+        </body>
     )
 }
