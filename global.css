@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+img {
+  @apply w-4 h-4 ;
+}
