@@ -9,11 +9,11 @@ export default function Cabecalho() {
         <header>
             <div className='flex space-x-8 items-center justify-center text-xs p-2'>
                 <div>
-                    <a href="#" className='flex space-x-1' target="_blank"><img src={email} alt="icone email"/>saudeamiga@email.com</a>
+                    <a href="#" className='flex' target="_blank"><img src={email} alt="icone email"/>saudeamiga@email.com</a>
                 </div>
                 <div className='flex space-x-2'>
-                    <a href="#" className='flex space-x-1' target="_blank"><img src={tel} alt="icone telefone"/>11 4444-4444</a>
-                    <a href="#" className='flex space-x-1' target="_blank"><img src={whats} alt="icone whatsapp"/>11 9 9999-9999 </a>
+                    <a href="#" className='flex' target="_blank"><img src={tel} alt="icone telefone"/>11 4444-4444</a>
+                    <a href="#" className='flex' target="_blank"><img src={whats} alt="icone whatsapp"/>11 9 9999-9999 </a>
                 </div>
             </div>
             <div className='flex items-center justify-between px-2 py-1 bg-gray-100'>
