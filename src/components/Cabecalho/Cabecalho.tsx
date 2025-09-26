@@ -3,6 +3,7 @@ import tel from '../../img/icones/phone.png'
 import whats from '../../img/icones/whats.png'
 import Menu from '../Menu/Menu'
 import logo from '../../img//logo-saude-amiga.png'
+import { Link } from 'react-router-dom'
 
 export default function Cabecalho() {
     return (
@@ -17,7 +18,7 @@ export default function Cabecalho() {
                 </div>
             </div>
             <div className='flex items-center justify-between px-2 py-1 bg-gray-100'>
-            <img src={logo} className='!w-28 !h-auto' alt="Logo Saúde Amiga" />
+                <Link to="/"><img src={logo} className="w-28 h-auto" alt="Logo Saúde Amiga" /></Link>
             <Menu/>
             </div>
         </header>
