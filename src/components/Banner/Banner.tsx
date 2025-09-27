@@ -19,11 +19,11 @@ export default function Banner() {
         className="object-cover transition-all duration-500 !w-full !h-full"
       />
 
-      <button onClick={prevSlide} className="absolute left-4 top-1/2 transform -translate-y-1/2 px-2 py-1 rounded-full">
-        ◀
+      <button onClick={prevSlide} className="absolute left-2 top-1/2 transform -translate-y-1/2 px-2 py-1 rounded-full">
+      «
       </button>
-      <button onClick={nextSlide} className="absolute right-4 top-1/2 transform -translate-y-1/2 px-2 py-1 rounded-full">
-        ▶
+      <button onClick={nextSlide} className="absolute right-2 top-1/2 transform -translate-y-1/2 px-2 py-1 rounded-full">
+      »
       </button>
     </div>
   );
