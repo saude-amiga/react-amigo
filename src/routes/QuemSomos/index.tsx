@@ -10,7 +10,6 @@ export default function QuemSomos() {
   <h1 className="text-3xl font-bold text-center mb-12">Quem Somos</h1>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {/* Card 1 */}
     <div className="flex flex-col items-center text-center">
       <img src={img_sabelli} alt="Victor Sabelli" className="w-80 h-80 object-cover rounded-full shadow-md mb-4" />
       <h2 className="text-xl font-semibold">Victor Sabelli Rocha Batista</h2>
@@ -22,7 +21,6 @@ export default function QuemSomos() {
       </div>
     </div>
 
-    {/* Card 2 */}
     <div className="flex flex-col items-center text-center">
       <img src={img_soteras} alt="Vinicius Soteras" className="w-80 h-80 object-cover rounded-full shadow-md mb-4" />
       <h2 className="text-xl font-semibold">Vinicius Soteras Braga</h2>
@@ -34,7 +32,6 @@ export default function QuemSomos() {
       </div>
     </div>
 
-    {/* Card 3 */}
     <div className="flex flex-col items-center text-center">
       <img src={img_kuba} alt="Rafael Kubagawa" className="w-80 h-80 object-cover rounded-full shadow-md mb-4" />
       <h2 className="text-xl font-semibold">Rafael Kubagawa Ramos</h2>

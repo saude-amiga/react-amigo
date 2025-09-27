@@ -26,7 +26,6 @@ export default function SaudeAmiga() {
             diferença no seu dia a dia!
           </p>
 
-          {/* Imagens lado a lado em telas grandes, empilhadas em telas pequenas */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
             <img
               src={hdc}
