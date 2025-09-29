@@ -11,70 +11,93 @@ import whats from '../../img/icones/whats.png'
 export default function Contato() {
   return (
     <main className="bg-white text-[#194737]">
-      <section id="contato" className="max-w-6xl mx-auto px-4 py-10">
-        <h1 className="text-3xl font-bold text-center mb-10">Contato</h1>
+      <section id="contato" className="max-w-6xl mx-auto px-4 py-16">
+        <h1 className="text-4xl font-bold text-center mb-12">Entre em Contato</h1>
+        <p className="text-center text-lg max-w-2xl mx-auto mb-12">
+          Ficou com alguma dúvida, sugestão ou precisa de suporte?  
+          Estamos prontos para ajudar você em todos os canais abaixo.
+        </p>
 
         {/* Redes Sociais */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-items-center mb-12">
-          <a href="#" className="flex flex-col items-center hover:scale-105 transition">
-            <img src={facebook} alt="Ícone do Facebook" className="w-35 h-35" />
-            <span className="mt-2 text-xl">Facebook</span>
-          </a>
-          <a href="#" className="flex flex-col items-center hover:scale-105 transition">
-            <img src={instagram} alt="Ícone do Instagram" className="w-35 h-35" />
-            <span className="mt-2 text-xl">Instagram</span>
-          </a>
-          <a href="#" className="flex flex-col items-center hover:scale-105 transition">
-            <img src={linkedin} alt="Ícone do LinkedIn" className="w-35 h-35" />
-            <span className="mt-2 text-xl">LinkedIn</span>
-          </a>
-          <a href="#" className="flex flex-col items-center hover:scale-105 transition">
-            <img src={telegram} alt="Ícone do Telegram" className="w-35 h-35" />
-            <span className="mt-2 text-xl">Telegram</span>
-          </a>
-          <a href="#" className="flex flex-col items-center hover:scale-105 transition">
-            <img src={tiktok} alt="Ícone do TikTok" className="w-35 h-35" />
-            <span className="mt-2 text-xl">TikTok</span>
-          </a>
-          <a href="#" className="flex flex-col items-center hover:scale-105 transition">
-            <img src={x_twitter} alt="Ícone do X / Twitter" className="w-35 h-35" />
-            <span className="mt-2 text-xl">X</span>
-          </a>
+        <div className="mb-16">
+          <h2 className="text-2xl font-semibold text-center mb-8">Redes Sociais</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 justify-items-center">
+            <a href="#" className="flex flex-col items-center hover:scale-110 transition">
+              <img src={facebook} alt="Ícone do Facebook" className="w-14 h-14" />
+              <span className="mt-2 text-lg">Facebook</span>
+            </a>
+            <a href="#" className="flex flex-col items-center hover:scale-110 transition">
+              <img src={instagram} alt="Ícone do Instagram" className="w-14 h-14" />
+              <span className="mt-2 text-lg">Instagram</span>
+            </a>
+            <a href="#" className="flex flex-col items-center hover:scale-110 transition">
+              <img src={linkedin} alt="Ícone do LinkedIn" className="w-14 h-14" />
+              <span className="mt-2 text-lg">LinkedIn</span>
+            </a>
+            <a href="#" className="flex flex-col items-center hover:scale-110 transition">
+              <img src={telegram} alt="Ícone do Telegram" className="w-14 h-14" />
+              <span className="mt-2 text-lg">Telegram</span>
+            </a>
+            <a href="#" className="flex flex-col items-center hover:scale-110 transition">
+              <img src={tiktok} alt="Ícone do TikTok" className="w-14 h-14" />
+              <span className="mt-2 text-lg">TikTok</span>
+            </a>
+            <a href="#" className="flex flex-col items-center hover:scale-110 transition">
+              <img src={x_twitter} alt="Ícone do X / Twitter" className="w-14 h-14" />
+              <span className="mt-2 text-lg">X</span>
+            </a>
+          </div>
         </div>
 
         {/* Contatos Diretos */}
-        <ul className="space-y-4 text-center">
-          <li>
-            <a
-              href="mailto:saudeamiga@email.com"
-              target="_blank"
-              className="inline-flex items-center gap-2 justify-center bg-[#76b99d] text-[#194737] px-4 py-2 rounded hover:bg-white transition"
-            >
-              <img src={email} alt="Ícone de E-mail" className="w-5 h-5" />
-              saudeamiga@email.com
-            </a>
-          </li>
-          <li>
-            <a
-              href="tel:+551144444444"
-              target="_blank"
-              className="inline-flex items-center gap-2 justify-center bg-[#76b99d] text-[#194737] px-4 py-2 rounded hover:bg-white transition"
-            >
-              <img src={tel} alt="Ícone de Telefone" className="w-5 h-5" />
-              11 4444-4444
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://wa.me/5511999999999"
-              target="_blank"
-              className="inline-flex items-center gap-2 justify-center bg-[#76b99d] text-[#194737] px-4 py-2 rounded hover:bg-white transition"
-            >
-              <img src={whats} alt="Ícone de WhatsApp" className="w-5 h-5" />
-              11 99999-9999
-            </a>
-          </li>
-        </ul>
+        <div className="bg-[#f5fdfb] rounded-xl shadow-md py-10 px-6 max-w-3xl mx-auto">
+          <h2 className="text-2xl font-semibold text-center mb-8">Fale Conosco</h2>
+          <ul className="space-y-6 text-center">
+            <li>
+              <a
+                href="mailto:saudeamiga@email.com"
+                target="_blank"
+                className="inline-flex items-center gap-3 justify-center bg-[#76b99d] text-[#194737] px-6 py-3 rounded-lg hover:bg-[#194737] hover:text-white transition"
+              >
+                <img src={email} alt="Ícone de E-mail" className="w-6 h-6" />
+                saudeamiga@email.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="tel:+551144444444"
+                target="_blank"
+                className="inline-flex items-center gap-3 justify-center bg-[#76b99d] text-[#194737] px-6 py-3 rounded-lg hover:bg-[#194737] hover:text-white transition"
+              >
+                <img src={tel} alt="Ícone de Telefone" className="w-6 h-6" />
+                (11) 4444-4444
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/5511999999999"
+                target="_blank"
+                className="inline-flex items-center gap-3 justify-center bg-[#76b99d] text-[#194737] px-6 py-3 rounded-lg hover:bg-[#194737] hover:text-white transition"
+              >
+                <img src={whats} alt="Ícone de WhatsApp" className="w-6 h-6" />
+                (11) 99999-9999
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* CTA Final */}
+        <div className="text-center mt-16">
+          <h3 className="text-xl font-semibold mb-4">Estamos aguardando seu contato!</h3>
+          <p className="mb-6">Fale conosco pelo canal que for mais confortável para você.</p>
+          <a
+            href="https://wa.me/5511999999999"
+            target="_blank"
+            className="px-8 py-3 bg-[#0A4A30] text-white rounded-lg font-bold hover:bg-[#063222] transition"
+          >
+            Falar no WhatsApp
+          </a>
+        </div>
       </section>
     </main>
   )
