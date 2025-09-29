@@ -1,5 +1,7 @@
 import hdc from '../../img/hdc.png'
 import logo from '../../img/logo-saude-amiga.png'
+import tela1 from '../../img/tela1.png'
+import tela2 from '../../img/tela2.png'
 
 export default function SaudeAmiga() {
   return (
@@ -30,13 +32,65 @@ export default function SaudeAmiga() {
             <img
               src={hdc}
               alt="Logotipo do Hospital das Clínicas"
-              className="w-48 h-auto"
+              className="w-40 h-auto"
             />
             <img
               src={logo}
               alt="Logotipo do Saúde Amiga"
-              className="w-48 h-auto"
+              className="w-40 h-auto"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f5fdfb] py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-6">Funcionalidades do Aplicativo</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <ul className="list-disc list-inside space-y-2">
+                <li>Acesso rápido e seguro ao Hospital das Clínicas</li>
+                <li>Histórico de consultas e exames sempre à mão</li>
+                <li>Integração com serviços do governo e saúde digital</li>
+                <li>Chat de suporte para facilitar sua experiência</li>
+                <li>Design acessível para todas as idades</li>
+              </ul>
+            </div>
+            <div className="flex gap-4 justify-center">
+              <img
+                src={tela1}
+                alt="Tela do aplicativo Saúde Amiga"
+                className="w-40 md:w-56"
+              />
+              <img
+                src={tela2}
+                alt="Outra tela do aplicativo Saúde Amiga"
+                className="w-40 md:w-56"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="max-w-6xl mx-auto px-4 text-center space-y-6">
+          <h2 className="text-2xl font-bold">Por que usar o Saúde Amiga?</h2>
+          <p>
+            Porque cuidar da sua saúde deve ser simples, seguro e acessível. Veja os benefícios:
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 mt-8">
+            <div className="p-6 bg-[#e6f9f2] rounded-xl shadow-md">
+              <h3 className="font-bold mb-2">Praticidade</h3>
+              <p>Acompanhe consultas e exames em poucos cliques.</p>
+            </div>
+            <div className="p-6 bg-[#e6f9f2] rounded-xl shadow-md">
+              <h3 className="font-bold mb-2">Segurança</h3>
+              <p>Seus dados protegidos com tecnologia de ponta.</p>
+            </div>
+            <div className="p-6 bg-[#e6f9f2] rounded-xl shadow-md">
+              <h3 className="font-bold mb-2">Conectividade</h3>
+              <p>Integração com os serviços do HC e do governo.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -37,34 +37,22 @@ export default function Rodape() {
             <p className="mb-4 text-[#ffffff] text-center">Fale conosco por e-mail ou telefone!</p>
             <ul className="space-y-2">
               <li>
-                <a
-                  target="_blank"
-                  href="mailto:saudeamiga@email.com"
-                  className="flex items-center gap-2 hover:text-[#29966a] justify-center"
-                >
+                <p className="flex items-center gap-2 justify-center">
                   <img src={email_branco} alt="Ícone de Email" className="w-5 h-5" />
                   saudeamiga@email.com
-                </a>
+                </p>
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="tel:+551144444444"
-                  className="flex items-center gap-2 hover:text-[#29966a] justify-center"
-                >
+                <p className="flex items-center gap-2 justify-center">
                   <img src={tel_branco} alt="Ícone de Telefone" className="w-5 h-5" />
                   11 4444-4444
-                </a>
+                </p>
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://wa.me/5511999999999"
-                  className="flex items-center gap-2 hover:text-[#29966a] justify-center"
-                >
+                <p className="flex items-center gap-2 justify-center">
                   <img src={whats_branco} alt="Ícone do WhatsApp" className="w-5 h-5" />
                   11 9 9999-9999
-                </a>
+                </p>
               </li>
             </ul>
           </div>

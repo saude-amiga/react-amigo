@@ -10,11 +10,11 @@ export default function Cabecalho() {
         <header>
             <div className='flex space-x-8 items-center justify-center text-xs p-2'>
                 <div>
-                    <a href="#" className='flex' target="_blank"><img src={email} className='w-4 h-4' alt="icone email"/>saudeamiga@email.com</a>
+                    <p className='flex'><img src={email} className='w-4 h-4' alt="icone email"/>saudeamiga@email.com</p>
                 </div>
                 <div className='flex space-x-2'>
-                    <a href="#" className='flex' target="_blank"><img src={tel} className='w-4 h-4' alt="icone telefone"/>11 4444-4444</a>
-                    <a href="#" className='flex' target="_blank"><img src={whats} className='w-4 h-4' alt="icone whatsapp"/>11 9 9999-9999 </a>
+                    <p className='flex'><img src={tel} className='w-4 h-4' alt="icone telefone"/>11 4444-4444</p>
+                    <p className='flex'><img src={whats} className='w-4 h-4' alt="icone whatsapp"/>11 9 9999-9999 </p>
                 </div>
             </div>
             <div className='flex items-center justify-between px-2 py-1 bg-gray-100'>
