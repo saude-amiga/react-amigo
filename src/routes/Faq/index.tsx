@@ -1,76 +1,86 @@
-export default function Faq() {
-    return (
-        <main>
-            <section className="sec-faq">
-                <h2 className="color2">Perguntas frequentes</h2>
-                <div className="faq">
-                    <div className="pergunta">
-                        <h3>Como faço para acessar a teleconsulta?
-                        </h3>
-                    </div>
-                    <div className="resposta">
-                        <p>Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/teleconsulta">portal do Hospital das Clinicas</a> procure no menu a esquerda a opção "teleconsulta". </p>
-                    </div>
-                </div>
-                <div className="faq">
-                    <div className="pergunta">
-                        <h3>Como imprimir meus resultados?</h3>
-                    </div>
-                    <div className="resposta">
-                        <p>Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/resultados">portal do Hospital das Clinicas</a> procure no menu a esquerda a opção "Minhas receitas" em seguida, no canto esquerdo superiror da tela, clique em “Imprimir”.</p>
-                    </div>
-                </div>
-                <div className="faq">
-                    <div className="pergunta">
-                        <h3>Como consigo conferir minhas receitas?</h3>
-                    </div>
-                    <div className="resposta">
-                        <p>Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/receitas">portal do Hospital das Clinicas</a> procure no menu a esquerda a opção "Minhas receitas". </p>
-                    </div>
-                </div>
-            </section>
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-            <section>
-                <div>
-                    <h2>Envie-nos sua pergunta</h2>
-                    <div>
-                        <form id="formPerg">
-                            <div>
-                                <label htmlFor="idNome">Nome:</label>
-                                <input type="text" name="nome" id="idNome" placeholder="Digite o seu nome" />
-                            </div>
-                            <div>
-                                <label htmlFor="idCelular">Número do Celular:</label>
-                                <input type="tel" name="celular" id="idCelular" placeholder="Digite o número do celular" />
-                            </div>
-                            <div>
-                                <label htmlFor="idEmail">Email:</label>
-                                <input type="text" name="email" id="idEmail" placeholder="Digite o seu email" />
-                            </div>
-                            <div>
-                                <label htmlFor="idAssunto">Assunto:</label>
-                                <select name="assunto" id="idAssunto">
-                                    <option value="saude">Saúde</option>
-                                    <option value="aplicativoHC">Aplicativo HC</option>
-                                    <option value="aplicativoSA">Aplicativo Saúde Amiga</option>
-                                    <option value="assistente-virtual">Assistente Virtual</option>
-                                    <option value="site">Site</option>
-                                    <option value="oficinas">Oficinas</option>
-                                    <option value="outros">Outros</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label htmlFor="idPergunta">Pergunta:</label>
-                                <input type="text" name="pergunta" id="idPergunta" placeholder="Digite sua pergunta" />
-                            </div>
-                            <div>
-                                <button type="submit" id="botaoEnviar" className="botaoenviar">Enviar Pergunta</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </main>
+export default function FormPergunta() {
+  const [formData, setFormData] = useState({
+    nome: '',
+    celular: '',
+    email: '',
+    pergunta: '',
+  });
 
-    )
+  const navigate = useNavigate();
+  const { id } = useParams(); // Exemplo de uso, caso queira usar um ID na URL
+
+  useEffect(() => {
+    if (id) {
+      console.log(`Carregando dados para ID: ${id}`);
+      // Aqui você poderia buscar dados existentes, se necessário
+    }
+  }, [id]);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Dados enviados:', formData);
+    navigate('/obrigado'); // Redireciona após envio
+  };
+
+  return (
+    <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded shadow-md">
+      <h2 className="text-2xl font-bold mb-6 text-center">Envie sua Pergunta</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Nome:</label>
+          <input
+            type="text"
+            name="nome"
+            placeholder="Digite o seu nome"
+            value={formData.nome}
+            onChange={handleChange}
+            className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Número do Celular:</label>
+          <input
+            type="tel"
+            name="celular"
+            placeholder="Digite o número do celular"
+            value={formData.celular}
+            onChange={handleChange}
+            className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Email:</label>
+          <input type="email" name="email" placeholder="Digite o seu email"
+ value={formData.email}
+            onChange={handleChange}
+            className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Pergunta:</label>
+          <textarea name="pergunta" placeholder="Digite sua pergunta" value={formData.pergunta} onChange={handleChange}
+            className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            required
+          />
+        </div>
+
+        <button type="submit"className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+          Enviar Pergunta
+        </button>
+      </form>
+    </div>
+  );
 }

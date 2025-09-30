@@ -20,7 +20,7 @@ export default function Menu() {
             <Link to="/quem-somos" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Quem Somos</Link>
             <Link to="/saude-amiga" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Saúde Amiga</Link>
             <Link to="/oficinas" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Oficinas</Link>
-            <Link to="/perguntas-frequentes" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">FAQ</Link>
+            <Link to="/perguntas-frequentes" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Perguntas</Link>
             <Link to="/contato" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Contato</Link>
           </nav>
         </div>
@@ -31,7 +31,7 @@ export default function Menu() {
         <Link to="/quem-somos" className="px-4 py-2 rounded-md bg-[#194737] hover:bg-[#29966a] transition">Quem Somos</Link>
         <Link to="/saude-amiga" className="px-4 py-2 rounded-md bg-[#194737] hover:bg-[#29966a] transition">Saúde Amiga</Link>
         <Link to="/oficinas" className="px-4 py-2 rounded-md bg-[#194737] hover:bg-[#29966a] transition">Oficinas</Link>
-        <Link to="/perguntas-frequentes" className="px-4 py-2 rounded-md bg-[#194737] hover:bg-[#29966a] transition">FAQ</Link>
+        <Link to="/perguntas-frequentes" className="px-4 py-2 rounded-md bg-[#194737] hover:bg-[#29966a] transition">Perguntas</Link>
         <Link to="/contato" className="px-4 py-2 rounded-md bg-[#194737] hover:bg-[#29966a] transition">Contato</Link>
       </div>
     </div>
