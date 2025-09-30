@@ -1,7 +1,8 @@
 export type TipoFaq = {
     id: number,
-    pergunta: string,
-    resposta: string,
-    categoria: string,
+    titulo: string,
+    corpo: string,
+    autorDaPergunta:string,
+    autorDaResposta:string,
     data_resposta: Date;
 }
