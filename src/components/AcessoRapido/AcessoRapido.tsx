@@ -7,7 +7,7 @@ export default function AcessoRapido() {
       <Link to="/quem-somos" className="hover:underline text-center">Quem Somos</Link>
       <Link to="/saude-amiga" className="hover:underline text-center">Saúde Amiga</Link>
       <Link to="/oficinas" className="hover:underline text-center">Oficinas</Link>
-      <Link to="/perguntas-frequentes" className="hover:underline text-center">FAQ</Link>
+      <Link to="/perguntas-frequentes" className="hover:underline text-center">Perguntas</Link>
       <Link to="/contato" className="hover:underline text-center">Contato</Link>
     </nav>
   );
