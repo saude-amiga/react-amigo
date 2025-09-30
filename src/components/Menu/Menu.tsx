@@ -8,8 +8,7 @@ export default function Menu() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden z-50 bg-[#29966a] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#76b99d] transition"
-      >
+        className="md:hidden z-50 bg-[#29966a] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#76b99d] transition">
         Menu ▼
       </button>
 
