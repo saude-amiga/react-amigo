@@ -28,7 +28,7 @@ export default function Cabecalho() {
                 </div>
             </div>
 
-            <div className='flex flex-col sm:flex-row items-center justify-between px-2 py-1 bg-gray-100 space-y-2 sm:space-y-0'>
+            <div className='flex sm:flex-row items-center justify-between px-2 py-1 bg-gray-100 space-y-2 sm:space-y-0'>
                 <Link to="/">
                     <img src={logo} className="w-24 sm:w-28 h-auto" alt="Logo Saúde Amiga" />
                 </Link>
