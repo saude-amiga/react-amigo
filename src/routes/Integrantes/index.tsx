@@ -3,7 +3,7 @@ import img_sabelli from '../../img/victor-sabelli.jpg'
 import img_kuba from '../../img/rafael-kubagawa-ramos.jpg'
 import img_soteras from '../../img/vinicius-soteras-braga.jpg'
 
-export default function QuemSomos() {
+export default function Integrantes() {
   useEffect(() => {
     document.title = "Quem Somos";
   }, []);
