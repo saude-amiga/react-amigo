@@ -15,8 +15,8 @@ import './global.css'
 const router = createBrowserRouter([
   {path:"/", element:<App/>, errorElement:<Error/>, children:[
     {path:"/", element:<Home/>},
-    {path:"/quem-somos", element:<QuemSomos/>},
-    {path:"/saude-amiga", element:<SaudeAmiga/>},
+    {path:"/integrantes", element:<QuemSomos/>},
+    {path:"/sobre", element:<SaudeAmiga/>},
     {path:"/oficinas", element:<Oficinas/>},
     {path:"/perguntas-frequentes", element:<Faq/>},
     {path:"/perguntas-frequentes/:id", element:<FaqResposta/>},
