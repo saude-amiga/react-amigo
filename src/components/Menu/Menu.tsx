@@ -16,7 +16,7 @@ export default function Menu() {
         <div className="md:hidden absolute right-0 mt-2 w-64 max-h-[80vh] overflow-y-auto bg-white border border-[#76b99d] rounded-md shadow-lg z-40">
           <nav className="p-4 space-y-2 text-[#194737] font-medium">
             <Link to="/" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Home</Link>
-            <Link to="/quem-somos" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Integrantes</Link>
+            <Link to="/integrantes" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Integrantes</Link>
             <Link to="/sobre" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Sobre</Link>
             <Link to="/oficinas" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Oficinas</Link>
             <Link to="/perguntas-frequentes" className="block px-4 py-2 rounded hover:bg-[#76b99d] hover:text-white transition">Perguntas</Link>
