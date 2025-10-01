@@ -56,9 +56,9 @@ export default function SaudeAmiga() {
               </ul>
             </div>
             <div className="flex gap-4 justify-center">
-              <img src={tela1} alt="Tela do aplicativo Saúde Amiga"
+              <img src={tela1} alt="Tela do aplicativo Saúde Amiga em overlay com o menu aberto na tela home do celular"
                 className="w-40 md:w-56"/>
-              <img src={tela2} alt="Outra tela do aplicativo Saúde Amiga"
+              <img src={tela2} alt="Tela do aplicativo Saúde Amiga em overlay com o aplicativo do Portal Hospital das Clínicas aberto"
                 className="w-40 md:w-56"/>
             </div>
           </div>

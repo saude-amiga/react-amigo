@@ -16,7 +16,7 @@ export default function QuemSomos() {
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div className="flex flex-col items-center text-center">
-      <img src={img_sabelli} alt="Victor Sabelli" className="w-60 h-80 object-cover rounded-full shadow-md mb-4" />
+      <img src={img_sabelli} alt="Foto de Victor Sabelli Rocha Batista usando máscara segurando celular tirando foto no espelho" className="w-60 h-80 object-cover rounded-full shadow-md mb-4" />
       <h2 className="text-xl font-semibold">Victor Sabelli Rocha Batista</h2>
       <p>RM - 566224</p>
       <p>1TDSPO</p>
@@ -27,7 +27,7 @@ export default function QuemSomos() {
     </div>
 
     <div className="flex flex-col items-center text-center">
-      <img src={img_soteras} alt="Vinicius Soteras" className="w-60 h-80 object-cover rounded-full shadow-md mb-4" />
+      <img src={img_soteras} alt="Foto de Vinicius Soteras Braga sorrindo para a câmera" className="w-60 h-80 object-cover rounded-full shadow-md mb-4" />
       <h2 className="text-xl font-semibold">Vinicius Soteras Braga</h2>
       <p>RM - 566230</p>
       <p>1TDSPO</p>
@@ -38,7 +38,7 @@ export default function QuemSomos() {
     </div>
 
     <div className="flex flex-col items-center text-center">
-      <img src={img_kuba} alt="Rafael Kubagawa" className="w-60 h-80 object-cover rounded-full shadow-md mb-4" />
+      <img src={img_kuba} alt="Foto de Rafael Kubagawa Ramos olhando para a câmera" className="w-60 h-80 object-cover rounded-full shadow-md mb-4" />
       <h2 className="text-xl font-semibold">Rafael Kubagawa Ramos</h2>
       <p>RM - 565572</p>
       <p>1TDSPO</p>
