@@ -15,25 +15,15 @@ export default function FormPergunta() {
   const validar = () => {
     const novosErros: { [key: string]: string } = {};
 
-    if (!formData.nome.trim()) {
-      novosErros.nome = "Nome é obrigatório.";
-    }
+    if (!formData.nome.trim()) {novosErros.nome = "Nome é obrigatório.";}
 
-    if (!formData.celular.trim()) {
-      novosErros.celular = "Celular é obrigatório.";
-    } else if (!/^\d{10,11}$/.test(formData.celular)) {
-      novosErros.celular = "Celular deve ter 10 ou 11 dígitos.";
-    }
+    if (!formData.celular.trim()) {novosErros.celular = "Celular é obrigatório.";}
+    else if (!/^\d{10,11}$/.test(formData.celular)) {novosErros.celular = "Celular deve ter 10 ou 11 dígitos.";}
 
-    if (!formData.email.trim()) {
-      novosErros.email = "Email é obrigatório.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      novosErros.email = "Email inválido.";
-    }
+    if (!formData.email.trim()) {novosErros.email = "Email é obrigatório.";}
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {novosErros.email = "Email inválido.";}
 
-    if (!formData.pergunta.trim()) {
-      novosErros.pergunta = "Pergunta é obrigatória.";
-    }
+    if (!formData.pergunta.trim()) {novosErros.pergunta = "Pergunta é obrigatória.";}
 
     setErros(novosErros);
     return Object.keys(novosErros).length === 0;
@@ -41,7 +31,7 @@ export default function FormPergunta() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErros({ ...erros, [e.target.name]: "" }); // limpa erro ao digitar
+    setErros({ ...erros, [e.target.name]: "" });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -50,14 +40,14 @@ export default function FormPergunta() {
     console.log("Dados válidos:", formData);
     alert("Pergunta enviada com sucesso!");
 
-    setFormData({
-      nome: "",
-      celular: "",
-      email: "",
-      assunto: "saude",
-      pergunta: "",
-    });
-
+setFormData({
+  nome: "",
+  celular: "",
+  email: "",
+  assunto: "saude",
+  pergunta: "",
+  
+});
     setErros({});
   }
 };
@@ -73,9 +63,8 @@ export default function FormPergunta() {
 
       </section>
       <section className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-center text-blue-700 mb-6">Envie-nos sua pergunta</h2>
+        <h2 className="text-2xl font-bold text-center text-[#194737] mb-6">Envie-nos sua pergunta</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Nome */}
           <div>
             <label htmlFor="idNome" className="block text-sm font-medium text-gray-700">Nome:</label>
             <input type="text" name="nome" id="idNome" placeholder="Digite o seu nome" maxLength={100}
@@ -124,7 +113,7 @@ export default function FormPergunta() {
 
           <div>
             <button type="submit" id="botaoEnviar"
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+              className="w-full bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#305538] transition">
               Enviar Pergunta
             </button>
           </div>

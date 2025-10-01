@@ -11,7 +11,7 @@ export default function FaqItem({ faq }: Props) {
   const toggle = () => setAberto(!aberto);
 
   return (
-    <div className="border border-gray-200 rounded-lg p-5 shadow-sm bg-white hover:shadow-md transition duration-300">
+    <div className="border border-gray-200 rounded-lg p-5 hover:shadow-md transition duration-300">
       <button
         onClick={toggle}
         className="w-full text-left flex justify-between items-center text-lg font-semibold text-[#194737] mb-2 focus:outline-none"

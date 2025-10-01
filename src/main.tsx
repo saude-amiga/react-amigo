@@ -9,7 +9,8 @@ import SaudeAmiga from './routes/SaudeAmiga/index.tsx'
 import Oficinas from './routes/Oficinas/index.tsx'
 import Faq from './routes/Faq/index.tsx'
 import Contato from './routes/Contato/index.tsx'
-import '../global.css'
+import FaqResposta from './routes/FaqResposta/index.tsx'
+import './global.css'
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, errorElement:<Error/>, children:[
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     {path:"/saude-amiga", element:<SaudeAmiga/>},
     {path:"/oficinas", element:<Oficinas/>},
     {path:"/perguntas-frequentes", element:<Faq/>},
+    {path:"/perguntas-frequentes/:id", element:<FaqResposta/>},
     {path:"/contato", element:<Contato/>}
   ]}
 ])
