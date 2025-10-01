@@ -125,7 +125,7 @@ export default function FormPergunta() {
 
           <div>
             <button type="submit" id="botaoEnviar"
-            className="w-full bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#305538] transition">
+            className="w-full bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#76b99d] transition">
               Enviar Pergunta
             </button>
           </div>

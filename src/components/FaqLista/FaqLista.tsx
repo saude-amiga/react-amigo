@@ -3,15 +3,21 @@ import { ListaFaq } from "../../data/listaFaq";
 import { useEffect, useState } from "react";
 import type { TipoFaq } from "../../types/tipoFaq";
 
-export default function FaqLista() {
-  const [perguntas, setPerguntas] = useState<TipoFaq[]>([])
+type FaqListaProps = {
+  perguntas?: TipoFaq[];
+};
+
+export default function FaqLista({ perguntas: propPerguntas }: FaqListaProps) {
+  const [perguntas, setPerguntas] = useState<TipoFaq[]>([]);
   const navigate = useNavigate();
+
   const irParaResposta = (id: number) => {
     navigate(`/perguntas-frequentes/${id}`);
   };
-  useEffect(()=> {
-    setPerguntas(ListaFaq)
-  },[]);
+
+  useEffect(() => {
+    setPerguntas(propPerguntas || ListaFaq);
+  }, [propPerguntas]);
 
   return (
     <section className="p-6 text-[#194737] text-center">
@@ -21,8 +27,7 @@ export default function FaqLista() {
           <button
             key={faq.id}
             onClick={() => irParaResposta(faq.id)}
-            className="w-170 mx-auto text-center bg-[#76b99d] text-[#194737] font-semibold px-4 py-3 grid rounded hover:bg-white transition shadow-sm"
-          >
+            className="w-170 mx-auto text-center bg-[#76b99d] text-[#194737] font-semibold px-4 py-3 grid rounded hover:bg-white transition shadow-sm">
             {faq.titulo}
           </button>
         ))}
