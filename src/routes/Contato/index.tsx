@@ -25,23 +25,23 @@ export default function Contato() {
               <img src={facebook} alt="Ícone do Facebook" className="w-14 h-14" />
               <span className="mt-2 text-lg">Facebook</span>
             </p>
-            <p className="flex flex-col items-center hover:scale-110 transition cursor-default">
+            <p className="flex flex-col items-center hover:scale-110 transition">
               <img src={instagram} alt="Ícone do Instagram" className="w-14 h-14" />
               <span className="mt-2 text-lg">Instagram</span>
             </p>
-            <p className="flex flex-col items-center hover:scale-110 transition cursor-default">
+            <p className="flex flex-col items-center hover:scale-110 transition">
               <img src={linkedin} alt="Ícone do LinkedIn" className="w-14 h-14" />
               <span className="mt-2 text-lg">LinkedIn</span>
             </p>
-            <p className="flex flex-col items-center hover:scale-110 transition cursor-default">
+            <p className="flex flex-col items-center hover:scale-110 transitio">
               <img src={telegram} alt="Ícone do Telegram" className="w-14 h-14" />
               <span className="mt-2 text-lg">Telegram</span>
             </p>
-            <p className="flex flex-col items-center hover:scale-110 transition cursor-default">
+            <p className="flex flex-col items-center hover:scale-110 transition">
               <img src={tiktok} alt="Ícone do TikTok" className="w-14 h-14" />
               <span className="mt-2 text-lg">TikTok</span>
             </p>
-            <p className="flex flex-col items-center hover:scale-110 transition cursor-default">
+            <p className="flex flex-col items-center hover:scale-110 transition">
               <img src={x_twitter} alt="Ícone do X / Twitter" className="w-14 h-14" />
               <span className="mt-2 text-lg">X</span>
             </p>
