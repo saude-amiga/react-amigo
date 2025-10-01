@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ListaFaq } from "../../data/listaFaq";
 
 export default function FaqResposta() {
+  useEffect(() => {
+    document.title = "Pergunta";
+  }, []);
+  
   const { id } = useParams();
   const navigate = useNavigate();
   const faq = ListaFaq.find((f) => f.id === Number(id));

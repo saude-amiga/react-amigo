@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import Banner from '../../components/Banner/Banner'
 import oficina2 from '../../img//oficina2.jpg'
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
+  
   return (
     <main className="bg-[#ffffff] text-[#194737]">
       <Banner />

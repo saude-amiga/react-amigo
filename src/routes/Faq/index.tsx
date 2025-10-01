@@ -1,5 +1,5 @@
-import FaqLista from "../../components/FaqLista/FaqLista";
 import { useEffect } from "react";
+import FaqLista from "../../components/FaqLista/FaqLista";
 import { useForm } from "react-hook-form";
 
 type FormData = {
@@ -15,7 +15,7 @@ export default function FormPergunta() {
     document.title = "Perguntas";
   }, []);
 
-  const { register, handleSubmit, reset, watch, 
+  const { register, handleSubmit, reset,
     formState: { errors, isSubmitSuccessful } 
   } = useForm<FormData>({
     mode: "onChange",

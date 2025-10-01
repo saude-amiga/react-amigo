@@ -1,8 +1,13 @@
+import { useEffect } from 'react';
 import img_sabelli from '../../img/victor-sabelli.jpg'
 import img_kuba from '../../img/rafael-kubagawa-ramos.jpg'
 import img_soteras from '../../img/vinicius-soteras-braga.jpg'
 
 export default function QuemSomos() {
+  useEffect(() => {
+    document.title = "Quem Somos";
+  }, []);
+
   return (
     <main className="bg-white text-[#194737]">
       <div className="max-w-6xl mx-auto px-4 py-10">
