@@ -17,7 +17,7 @@ export default function FaqLista({ perguntas: propPerguntas }: FaqListaProps) {
 
   useEffect(() => {
     setPerguntas(propPerguntas || ListaFaq);
-  }, [propPerguntas]);
+  }, []);
 
   return (
     <section className="p-6 text-[#194737] text-center">
