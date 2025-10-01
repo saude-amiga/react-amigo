@@ -27,24 +27,24 @@ export const ListaFaq: TipoFaq[] = [
   },
   {
     id: 4,
-    titulo: "Template",
-    corpo: `Template`,
+    titulo: "Onde vejo as minhas solicitações de exames?",
+    corpo: `Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/solicitacao-exames">portal do Hospital das Clinicas</a> Informe o RGHC (matrícula) ou o CPF do paciente e clique em buscar`,
     autorDaPergunta: "Marcos Tavares",
     autorDaResposta: "Beatriz Nogueira",
     data_resposta: new Date(2025, 6, 14)
   },
   {
     id: 5,
-    titulo: "Template",
-    corpo: `Template`,
+    titulo: "Como vejo minha agenda?",
+    corpo: `Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/agendamentos"> você pode ver sua agenda`,
     autorDaPergunta: "Letícia Ramos",
     autorDaResposta: "Beatriz Nogueira",
     data_resposta: new Date(2025, 8, 2)
   },
   {
     id: 6,
-    titulo: "Template",
-    corpo: `Template`,
+    titulo: "Onde estão meus documentos?",
+    corpo: `Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/meus-documentos"> é onde você pode ver seus documentos`,
     autorDaPergunta: "André Monteiro",
     autorDaResposta: "Eduardo Martins",
     data_resposta: new Date(2025, 9, 17)
