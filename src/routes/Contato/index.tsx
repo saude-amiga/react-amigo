@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import facebook from '../../img/icones/facebook.png'
 import instagram from '../../img/icones/instagram.png'
 import x_twitter from '../../img/icones/x-twitter.png'
@@ -9,6 +10,10 @@ import tel from '../../img/icones/phone.png'
 import whats from '../../img/icones/whats.png'
 
 export default function Contato() {
+  useEffect(() => {
+    document.title = "Contato";
+  }, []);
+
   return (
     <main className="bg-white text-[#194737]">
       <section id="contato" className="max-w-6xl mx-auto px-4 py-16">

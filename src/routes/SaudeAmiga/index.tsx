@@ -1,9 +1,14 @@
+import { useEffect } from 'react';
 import hdc from '../../img/hdc.png'
 import logo from '../../img/logo-saude-amiga.png'
 import tela1 from '../../img/tela1.png'
 import tela2 from '../../img/tela2.png'
 
 export default function SaudeAmiga() {
+  useEffect(() => {
+    document.title = "Saúde Amiga";
+  }, []);
+
   return (
     <main className="bg-white text-[#194737]">
       <section id="saude-amiga" className="max-w-6xl mx-auto px-4 py-10">
@@ -29,16 +34,10 @@ export default function SaudeAmiga() {
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
-            <img
-              src={hdc}
-              alt="Logotipo do Hospital das Clínicas"
-              className="w-40 h-auto"
-            />
-            <img
-              src={logo}
-              alt="Logotipo do Saúde Amiga"
-              className="w-40 h-auto"
-            />
+            <img src={hdc} alt="Logotipo do Hospital das Clínicas"
+              className="w-40 h-auto"/>
+            <img src={logo} alt="Logotipo do Saúde Amiga"
+            className="w-40 h-auto"/>
           </div>
         </div>
       </section>
@@ -57,16 +56,10 @@ export default function SaudeAmiga() {
               </ul>
             </div>
             <div className="flex gap-4 justify-center">
-              <img
-                src={tela1}
-                alt="Tela do aplicativo Saúde Amiga"
-                className="w-40 md:w-56"
-              />
-              <img
-                src={tela2}
-                alt="Outra tela do aplicativo Saúde Amiga"
-                className="w-40 md:w-56"
-              />
+              <img src={tela1} alt="Tela do aplicativo Saúde Amiga em overlay com o menu aberto na tela home do celular"
+                className="w-40 md:w-56"/>
+              <img src={tela2} alt="Tela do aplicativo Saúde Amiga em overlay com o aplicativo do Portal Hospital das Clínicas aberto"
+                className="w-40 md:w-56"/>
             </div>
           </div>
         </div>

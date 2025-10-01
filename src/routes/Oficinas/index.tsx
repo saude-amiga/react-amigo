@@ -1,21 +1,21 @@
+import { useEffect } from 'react';
 import oficina1 from '../../img/oficina1.jpg'
 import oficina2 from '../../img/oficina2.jpg'
 import oficina3 from '../../img/oficina3.jpg'
 
 export default function Oficinas() {
+  useEffect(() => {
+    document.title = "Oficinas";
+  }, []);
+
   return (
     <main className="bg-white text-[#194737]">
       <section id="oficina" className="max-w-6xl mx-auto px-4 py-10 space-y-16">
-        {/* Título principal */}
         <h1 className="text-3xl font-bold text-center">Oficinas</h1>
 
-        {/* Bloco 1 */}
         <div className="flex flex-col lg:flex-row items-center gap-8">
-          <img
-            src={oficina1}
-            alt="Adultos participando de oficina de inclusão digital"
-            className="w-full lg:w-1/2 h-auto rounded shadow-md"
-          />
+          <img src={oficina1}alt="Adultos e idosos sentados em uma mesa com computadores participando de oficina de inclusão digital enquanto um homem os ajuda."
+            className="w-full lg:w-1/2 h-auto rounded shadow-md"/>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Bem-Vindo ao mundo digital!</h2>
             <p>
@@ -28,13 +28,9 @@ export default function Oficinas() {
           </div>
         </div>
 
-        {/* Bloco 2 */}
         <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
-          <img
-            src={oficina2}
-            alt="Mulher usando headset e óculos explicando algo durante um atendimento remoto"
-            className="w-full lg:w-1/2 h-auto rounded shadow-md"
-          />
+          <img src={oficina2} alt="Mulher usando headset e óculos, sentada em frente a um computador, mostrando a tela de um celular durante uma videochamada ou atendimento online."
+            className="w-full lg:w-1/2 h-auto rounded shadow-md"/>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Tecnologia Pode Facilitar a Sua Vida</h2>
             <p>
@@ -52,13 +48,9 @@ export default function Oficinas() {
           </div>
         </div>
 
-        {/* Bloco 3 */}
         <div className="flex flex-col lg:flex-row items-center gap-8">
-          <img
-            src={oficina3}
-            alt="Homem mais velho sorrindo enquanto segura um smartphone"
-            className="w-full lg:w-1/2 h-auto rounded shadow-md"
-          />
+          <img src={oficina3} alt="Homem mais velho sentado em frente a uma mesa com um laptop sorrindo enquanto segura um smartphone."
+            className="w-full lg:w-1/2 h-auto rounded shadow-md"/>
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Conecte-se com Confiança</h2>
             <p>
