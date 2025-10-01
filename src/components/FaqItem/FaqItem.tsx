@@ -1,11 +1,7 @@
 import { useState } from "react";
-import type { TipoFaq } from "../../types/tipoFaq";
+import type { CardFaq } from "../../types/cardFaq";
 
-type Props = {
-  faq: TipoFaq;
-};
-
-export default function FaqItem({ faq }: Props) {
+export default function FaqItem({ faq }: CardFaq) {
   const [aberto, setAberto] = useState(false);
 
   const toggle = () => setAberto(!aberto);
