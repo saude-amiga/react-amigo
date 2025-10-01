@@ -36,7 +36,7 @@ export const ListaFaq: TipoFaq[] = [
   {
     id: 5,
     titulo: "Como vejo minha agenda?",
-    corpo: `Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/agendamentos"> você pode ver sua agenda`,
+    corpo: `Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/agendamentos">portal do Hospital das Clinicas</a> você pode ver sua agenda`,
     autorDaPergunta: "Letícia Ramos",
     autorDaResposta: "Beatriz Nogueira",
     data_resposta: new Date(2025, 8, 2)
@@ -44,7 +44,7 @@ export const ListaFaq: TipoFaq[] = [
   {
     id: 6,
     titulo: "Onde estão meus documentos?",
-    corpo: `Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/meus-documentos"> é onde você pode ver seus documentos`,
+    corpo: `Dentro do <a href="https://portaldopaciente.hc.fm.usp.br/meus-documentos">portal do Hospital das Clinicas</a> é onde você pode ver seus documentos`,
     autorDaPergunta: "André Monteiro",
     autorDaResposta: "Eduardo Martins",
     data_resposta: new Date(2025, 9, 17)
