@@ -23,12 +23,12 @@ export default function Rodape() {
           <div>
             <h1 className="text-xl font-semibold mb-4 text-center text-[#ffffff]">Redes Sociais</h1>
             <div className="grid grid-cols-3 gap-4 place-items-center">
-              <img src={facebook} alt="Ícone do Facebook" className="w-16 h-16" />
-              <img src={instagram} alt="Ícone do Instagram" className="w-16 h-16" />
-              <img src={x_twitter} alt="Ícone do X/Twitter" className="w-16 h-16" />
-              <img src={tiktok} alt="Ícone do Tik Tok" className="w-16 h-16" />
-              <img src={telegram} alt="Ícone do Telegram" className="w-16 h-16" />
-              <img src={linkedin} alt="Ícone do LinkedIn" className="w-16 h-16" />
+              <img src={facebook} alt="Ícone do Facebook" className="w-16 h-16 hover:scale-110 transition" />
+              <img src={instagram} alt="Ícone do Instagram" className="w-16 h-16 hover:scale-110 transition" />
+              <img src={x_twitter} alt="Ícone do X/Twitter" className="w-16 h-16 hover:scale-110 transition" />
+              <img src={tiktok} alt="Ícone do Tik Tok" className="w-16 h-16 hover:scale-110 transition" />
+              <img src={telegram} alt="Ícone do Telegram" className="w-16 h-16 hover:scale-110 transition" />
+              <img src={linkedin} alt="Ícone do LinkedIn" className="w-16 h-16 hover:scale-110 transition" />
             </div>
           </div>
 
