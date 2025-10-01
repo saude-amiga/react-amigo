@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import img_sabelli from '../../img/victor-sabelli.jpg'
 import img_kuba from '../../img/rafael-kubagawa-ramos.jpg'
 import img_soteras from '../../img/vinicius-soteras-braga.jpg'
+import github from  '../../img/icones/github.png'
+import linkedin from  '../../img/icones/linkedin.png'
 
 export default function Integrantes() {
   useEffect(() => {
