@@ -6,6 +6,7 @@ Nossa solução foi desenvolvida durante o Challenge do Hospital das Clínicas d
 ## 🎯 Objetivo do Projeto
 
 A Saúde Amiga tem como missão tornar o uso do aplicativo Portal do Paciente HC mais simples, acessível e acolhedor para idosos, pessoas com deficiência (PCDs) e para quem não está familiarizado com tecnologia. Nossa solução foi pensada para reduzir o absenteísmo, facilitar a comunicação e eliminar barreiras que dificultam o acesso desses pacientes aos serviços digitais de saúde. Mais do que melhorar o atendimento, buscamos promover a inclusão digital, garantindo que todos possam cuidar da sua saúde com mais conforto, autonomia e dignidade.
+Este é um site institucional criado para divulgar e explicar o aplicativo. Além de apresentar os objetivos e funcionalidades da solução, o site também serve como um canal para responder perguntas frequentes sobre nosso aplicativo e o Portal do Paciente do HC. Os pacientes podem cadastrar novas dúvidas que serão respondidas futuramente para tentarmos garantir uma comunicação efetiva.
 
 ## 📁 Estrutura de Diretórios e Arquivos
 
