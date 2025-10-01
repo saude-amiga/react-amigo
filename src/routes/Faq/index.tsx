@@ -1,14 +1,7 @@
 import { useEffect } from "react";
 import FaqLista from "../../components/FaqLista/FaqLista";
 import { useForm } from "react-hook-form";
-
-type FormData = {
-  nome: string;
-  celular: string;
-  email: string;
-  assunto: string;
-  pergunta: string;
-};
+import type { FormData } from "../../types/formData";
 
 export default function FormPergunta() {
   useEffect(() => {
@@ -104,7 +97,6 @@ export default function FormPergunta() {
               <option value="saude">Saúde</option>
               <option value="aplicativoHC">Aplicativo HC</option>
               <option value="aplicativoSA">Aplicativo Saúde Amiga</option>
-              <option value="chatBot">ChatBot</option>
               <option value="site">Site</option>
               <option value="oficinas">Oficinas</option>
               <option value="outros">Outros</option>
