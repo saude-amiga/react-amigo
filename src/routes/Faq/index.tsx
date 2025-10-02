@@ -17,7 +17,7 @@ export default function FormPergunta() {
       nome: "",
       celular: "",
       email: "",
-      assunto: "saude",
+      assunto: "Aplicativo HC",
       pergunta: "",
     },
   });
@@ -115,17 +115,12 @@ export default function FormPergunta() {
 
           {/* Assunto */}
           <div>
-            <label htmlFor="idAssunto" className="block text-sm font-medium text-gray-700">
-              Assunto:
-            </label>
-            <select
-              id="idAssunto"
-              {...register("assunto")}
-              className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
-            >
-              <option value="saude">Saúde</option>
+            <label htmlFor="idAssunto" className="block text-sm font-medium text-gray-700">Assunto:</label>
+            <select id="idAssunto" {...register("assunto")}
+            className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
               <option value="aplicativoHC">Aplicativo HC</option>
               <option value="aplicativoSA">Aplicativo Saúde Amiga</option>
+              <option value="chatBot">ChatBot</option>
               <option value="site">Site</option>
               <option value="oficinas">Oficinas</option>
               <option value="outros">Outros</option>
