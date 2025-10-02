@@ -11,7 +11,115 @@ Este é um site institucional criado para divulgar e explicar o aplicativo. Alé
 ## 📁 Estrutura de Diretórios e Arquivos
 
 ```
-TESTE
+react-amigo
+│ 
+│   .gitignore
+│   eslint.config.js
+│   index.html
+│   package-lock.json
+│   package.json
+│   README.md
+│   tsconfig.app.json
+│   tsconfig.json
+│   tsconfig.node.json
+│   vite.config.ts
+│
+└───src
+    │   App.tsx
+    │   global.css
+    │   main.tsx
+    │   vite-env.d.ts
+    │
+    ├───components
+    │   ├───AcessoRapido
+    │   │       AcessoRapido.tsx
+    │   │
+    │   ├───Banner
+    │   │       Banner.tsx
+    │   │
+    │   ├───Cabecalho
+    │   │       Cabecalho.tsx
+    │   │
+    │   ├───CardPergunta
+    │   │       CardPergunta.tsx
+    │   │
+    │   ├───FaqLista
+    │   │       FaqLista.tsx
+    │   │
+    │   ├───Menu
+    │   │       Menu.tsx
+    │   │
+    │   └───Rodape
+    │           Rodape.tsx
+    │
+    ├───data
+    │       listaFaq.ts
+    │
+    ├───img
+    │   │   desenho-saude-amiga.png
+    │   │   hdc.png
+    │   │   logo-saude-amiga.png
+    │   │   oficina1.jpg
+    │   │   oficina2.jpg
+    │   │   oficina3.jpg
+    │   │   rafael-kubagawa-ramos.jpg
+    │   │   tela1.png
+    │   │   tela2.png
+    │   │   victor-sabelli.jpg
+    │   │   vinicius-soteras-braga.jpg
+    │   │
+    │   ├───banner
+    │   │       banner1.jpg
+    │   │       banner2.jpg
+    │   │       banner3.jpg
+    │   │
+    │   └───icones
+    │           facebook.png
+    │           github.png
+    │           instagram.png
+    │           linkedin-og.png
+    │           linkedin.png
+    │           logo-icone.png
+    │           mail-branco.png
+    │           mail.png
+    │           menu.png
+    │           phone-branco.png
+    │           phone.png
+    │           telegram.png
+    │           tiktok.png
+    │           whats-branco.png
+    │           whats.png
+    │           x-twitter.png
+    │
+    ├───routes
+    │   ├───Contato
+    │   │       index.tsx
+    │   │
+    │   ├───Error
+    │   │       index.tsx
+    │   │
+    │   ├───Faq
+    │   │       index.tsx
+    │   │
+    │   ├───FaqResposta
+    │   │       index.tsx
+    │   │
+    │   ├───Home
+    │   │       index.tsx
+    │   │
+    │   ├───Integrantes
+    │   │       index.tsx
+    │   │
+    │   ├───Oficinas
+    │   │       index.tsx
+    │   │
+    │   └───Sobre
+    │           index.tsx
+    │
+    └───types
+            cardFaq.ts
+            formData.ts
+            tipoFaq.ts
 ```
 
 ## 🛠️ Tecnologias Utilizadas
