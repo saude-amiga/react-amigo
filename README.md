@@ -167,9 +167,9 @@ https://github.com/saude-amiga/react-amigo
 
 **Veja mais sobre os recursos do projeto no nosso vídeo!**
 
-Link do Vídeo
+https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa
 
-<a href="https://www.youtube.com/watch?v=ID_DO_VIDEO" target="_blank">
+<a href="https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-Apresentação%20Saúde%20Amiga-ff0000?style=flat&logo=youtube&logoColor=white" width="20%"/>
 </a>
 
