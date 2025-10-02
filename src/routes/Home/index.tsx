@@ -24,7 +24,7 @@ export default function Home() {
           <p className="mb-4">
           Venha conhecer e descubra como a tecnologia pode estar ao seu lado no cuidado com a saúde.
           </p>
-          <Link to="/saude-amiga"
+          <Link to="/sobre"
             className="inline-block bg-[#76b99d] text-[#194737] font-semibold px-4 py-2 rounded hover:bg-white transition">
             Saiba mais ...
           </Link>
@@ -35,7 +35,7 @@ export default function Home() {
           <p className="mb-4">
             O Saúde Amiga é desenvolvido por estudantes dedicados da FIAP, com foco em inclusão digital e acessibilidade.
           </p>
-          <Link to="/quem-somos"
+          <Link to="/integrantes"
             className="inline-block bg-white text-[#194737] font-semibold px-4 py-2 rounded hover:bg-[#29966a] transition">
             Conheça os criadores
           </Link>
@@ -67,7 +67,7 @@ export default function Home() {
             <li>Notificações personalizadas para lembrar compromissos</li>
             <li>Interface simples e intuitiva para todas as idades</li>
           </ul>
-          <Link to="/saude-amiga"
+          <Link to="/sobre"
             className="inline-block bg-[#76b99d] text-[#194737] font-semibold px-4 py-2 rounded hover:bg-white transition">
             Conheça os benefícios
           </Link>
