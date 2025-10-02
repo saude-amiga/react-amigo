@@ -1,24 +1,11 @@
-import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ListaFaq } from "../../data/listaFaq";
-import type { TipoFaq } from "../../types/tipoFaq";
 
-type FaqRespostaProps = {
-  faq?: TipoFaq;
-  id?: number | string;
-};
-
-export default function FaqResposta({ faq: propFaq, id: propId }: FaqRespostaProps) {
-  const { id: routeId } = useParams<{ id: string }>();
+export default function FaqResposta() {
+  const { id:routeId } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const faq =
-    propFaq ||
-    ListaFaq.find((f) => f.id === Number(propId || routeId));
-
-  useEffect(() => {
-    document.title = faq ? faq.titulo : "Pergunta";
-  }, [faq]);
+  const faq = ListaFaq.find((f) => f.id === Number(routeId));
 
   if (!faq) {
     return (
