@@ -6,12 +6,120 @@ Nossa solução foi desenvolvida durante o Challenge do Hospital das Clínicas d
 ## 🎯 Objetivo do Projeto
 
 A Saúde Amiga tem como missão tornar o uso do aplicativo Portal do Paciente HC mais simples, acessível e acolhedor para idosos, pessoas com deficiência (PCDs) e para quem não está familiarizado com tecnologia. Nossa solução foi pensada para reduzir o absenteísmo, facilitar a comunicação e eliminar barreiras que dificultam o acesso desses pacientes aos serviços digitais de saúde. Mais do que melhorar o atendimento, buscamos promover a inclusão digital, garantindo que todos possam cuidar da sua saúde com mais conforto, autonomia e dignidade.
-Este é um site institucional criado para divulgar e explicar o aplicativo. Além de apresentar os objetivos e funcionalidades da solução, o site também serve como um canal para responder perguntas frequentes sobre nosso aplicativo e o Portal do Paciente do HC. Os pacientes podem cadastrar novas dúvidas que serão respondidas futuramente para tentarmos garantir uma comunicação efetiva.
+Este é um site institucional criado para divulgar nossa solução. Além de apresentar os objetivos e funcionalidades da solução, o site também serve como um canal para responder perguntas frequentes sobre nosso aplicativo e o Portal do Paciente do HC. Os pacientes podem cadastrar novas dúvidas que serão respondidas futuramente para tentarmos garantir uma comunicação efetiva.
 
 ## 📁 Estrutura de Diretórios e Arquivos
 
 ```
-TESTE
+react-amigo
+│ 
+│   .gitignore
+│   eslint.config.js
+│   index.html
+│   package-lock.json
+│   package.json
+│   README.md
+│   tsconfig.app.json
+│   tsconfig.json
+│   tsconfig.node.json
+│   vite.config.ts
+│
+└───src
+    │   App.tsx
+    │   global.css
+    │   main.tsx
+    │   vite-env.d.ts
+    │
+    ├───components
+    │   ├───AcessoRapido
+    │   │       AcessoRapido.tsx
+    │   │
+    │   ├───Banner
+    │   │       Banner.tsx
+    │   │
+    │   ├───Cabecalho
+    │   │       Cabecalho.tsx
+    │   │
+    │   ├───CardPergunta
+    │   │       CardPergunta.tsx
+    │   │
+    │   ├───FaqLista
+    │   │       FaqLista.tsx
+    │   │
+    │   ├───Menu
+    │   │       Menu.tsx
+    │   │
+    │   └───Rodape
+    │           Rodape.tsx
+    │
+    ├───data
+    │       listaFaq.ts
+    │
+    ├───img
+    │   │   desenho-saude-amiga.png
+    │   │   hdc.png
+    │   │   logo-saude-amiga.png
+    │   │   oficina1.jpg
+    │   │   oficina2.jpg
+    │   │   oficina3.jpg
+    │   │   rafael-kubagawa-ramos.jpg
+    │   │   tela1.png
+    │   │   tela2.png
+    │   │   victor-sabelli.jpg
+    │   │   vinicius-soteras-braga.jpg
+    │   │
+    │   ├───banner
+    │   │       banner1.jpg
+    │   │       banner2.jpg
+    │   │       banner3.jpg
+    │   │
+    │   └───icones
+    │           facebook.png
+    │           github.png
+    │           instagram.png
+    │           linkedin-og.png
+    │           linkedin.png
+    │           logo-icone.png
+    │           mail-branco.png
+    │           mail.png
+    │           menu.png
+    │           phone-branco.png
+    │           phone.png
+    │           telegram.png
+    │           tiktok.png
+    │           whats-branco.png
+    │           whats.png
+    │           x-twitter.png
+    │
+    ├───routes
+    │   ├───Contato
+    │   │       index.tsx
+    │   │
+    │   ├───Error
+    │   │       index.tsx
+    │   │
+    │   ├───Faq
+    │   │       index.tsx
+    │   │
+    │   ├───FaqResposta
+    │   │       index.tsx
+    │   │
+    │   ├───Home
+    │   │       index.tsx
+    │   │
+    │   ├───Integrantes
+    │   │       index.tsx
+    │   │
+    │   ├───Oficinas
+    │   │       index.tsx
+    │   │
+    │   └───Sobre
+    │           index.tsx
+    │
+    └───types
+            cardFaq.ts
+            formData.ts
+            tipoFaq.ts
 ```
 
 ## 🛠️ Tecnologias Utilizadas
@@ -59,9 +167,9 @@ https://github.com/saude-amiga/react-amigo
 
 **Veja mais sobre os recursos do projeto no nosso vídeo!**
 
-Link do Vídeo
+https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa
 
-<a href="https://www.youtube.com/watch?v=ID_DO_VIDEO" target="_blank">
+<a href="https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-Apresentação%20Saúde%20Amiga-ff0000?style=flat&logo=youtube&logoColor=white" width="20%"/>
 </a>
 
