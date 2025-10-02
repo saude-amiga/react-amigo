@@ -3,13 +3,15 @@ import banner2 from '../../img/banner/banner2.jpg';
 import banner3 from '../../img/banner/banner3.jpg';
 import { useState, useEffect } from "react";
 
+
+
+export default function Banner() {
 const banners = [
   { src: banner1, alt: "Um casal de idosos sentados no sofá, sorrindo e olhando juntos para um tablet. No canto superior esquerdo estão os logotipos do Hospital das Clínicas da FMUSP e do programa Saúde Amiga." },
   { src: banner2, alt: "Homem usando um laptop enquanto fala ao telefone. No canto superior esquerdo estão os logotipos do Hospital das Clínicas da FMUSP e do programa Saúde Amiga." },
   { src: banner3, alt: "Homem mais velho sentado no sofá,sorrindo e usando um tablet, No canto superior esquerdo estão os logotipos do Hospital das Clínicas da FMUSP e do programa Saúde Amiga." },
 ];
 
-export default function Banner() {
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % banners.length);

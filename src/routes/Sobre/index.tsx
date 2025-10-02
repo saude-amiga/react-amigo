@@ -4,7 +4,7 @@ import logo from '../../img/logo-saude-amiga.png'
 import tela1 from '../../img/tela1.png'
 import tela2 from '../../img/tela2.png'
 
-export default function SaudeAmiga() {
+export default function Sobre() {
   useEffect(() => {
     document.title = "Saúde Amiga";
   }, []);
