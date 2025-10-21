@@ -10,7 +10,6 @@ import Oficinas from './routes/Oficinas/index.tsx'
 import Faq from './routes/Faq/index.tsx'
 import Contato from './routes/Contato/index.tsx'
 import FaqResposta from './routes/FaqResposta/index.tsx'
-import './global.css'
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, errorElement:<Error/>, children:[
