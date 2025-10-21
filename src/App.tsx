@@ -8,9 +8,9 @@ export default function App() {
     <div className="flex flex-col min-h-screen">
       <Cabecalho />
 
-      <main className="flex-1">
+      <div className="flex-1">
         <Outlet />
-      </main>
+      </div>
 
       <Rodape />
     </div>
