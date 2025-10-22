@@ -8,15 +8,15 @@ import { Link } from 'react-router-dom'
 export default function Cabecalho() {
     return (
         <header>
-            <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs p-2 space-y-2 sm:space-y-0'>
-                <div className='flex justify-center sm:justify-start'>
+            <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center p-2'>
+                <div className='flex justify-center'>
                     <p className='flex items-center gap-1'>
                         <img src={email} className='w-4 h-4' alt="ícone email" />
                         saudeamiga@email.com
                     </p>
                 </div>
 
-                <div className='flex flex-col sm:flex-row sm:space-x-3 items-center justify-center sm:justify-end space-y-1 sm:space-y-0'>
+                <div className='flex justify-center gap-2'>
                     <p className='flex items-center gap-1'>
                         <img src={tel} className='w-3 h-3' alt="ícone telefone" />
                         11 4444-4444
