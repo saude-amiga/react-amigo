@@ -25,7 +25,7 @@ if (!faq) {
 
 
   return (
-    <main className="max-w-3xl mx-auto p-6">
+    <main className="bg-white max-w-3xl mx-auto p-6">
       <h2 className="text-2xl font-bold text-[#194737] mb-4">{faq.titulo}</h2>
 
       <p className="text-sm text-gray-600 mb-2">

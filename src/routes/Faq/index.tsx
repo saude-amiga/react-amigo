@@ -34,7 +34,7 @@ export default function FormPergunta() {
   };
 
   return (
-    <main className="bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
+    <main className="bg-white py-10 px-4 sm:px-6 lg:px-8">
       {/* Lista de perguntas */}
       <section className="mb-10">
         <FaqLista />

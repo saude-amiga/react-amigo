@@ -12,7 +12,7 @@ export default function Home() {
     <main className="bg-[#ffffff] text-[#194737]">
       <Banner/>
 
-      <div className="max-w-6xl mx-auto px-4 py-10 space-y-16">
+      <div className="bg-white max-w-6xl mx-auto px-4 py-10 space-y-16">
         <section id="saude-amiga" className="bg-[#ffffff] p-6">
           <h1 className="text-2xl font-bold mb-4 text-[#194737]">Saúde Amiga</h1>
           <p className="mb-4">
