@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import type { LoginFormData } from "../../types/loginFormData";
 
@@ -8,6 +8,8 @@ export default function Login() {
   useEffect(() => {
     document.title = "Área de funcionários";
   }, []);
+
+  const [exibeLoginNaoEncontrado, setExibeLoginNaoEncontrado] = useState<boolean>(false);
 
   const {
     handleSubmit,
@@ -24,15 +26,15 @@ export default function Login() {
       if (!resp.ok) throw new Error("Falha ao requisitar json de objeto usuário");
       const user = await resp.json();
       if (user.length !== 0) {
+        setExibeLoginNaoEncontrado(false);
         alert("Usuário logado com sucesso!");
         localStorage.setItem("usuario", JSON.stringify(user[0]));
         window.location.reload();
       } else {
-        alert("Usuário não encontrado.");
+        setExibeLoginNaoEncontrado(true);
       }
-    } catch (e) {
+    } catch {
       alert("Erro no processo de login!");
-      console.error("Erro ao requisitar objeto usuário!");
     }
   };
 
@@ -86,6 +88,12 @@ export default function Login() {
           >
             Fazer Login
           </button>
+
+          {exibeLoginNaoEncontrado && (
+            <p className="text-red-500 text-sm mt-4 text-center">
+              Nome de usuário ou email incorreto
+            </p>
+          )}
         </form>
       </div>
     </main>
