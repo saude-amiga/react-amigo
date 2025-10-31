@@ -3,6 +3,7 @@ import tel from '../../img/icones/phone.png'
 import whats from '../../img/icones/whats.png'
 import Menu from '../Menu/Menu'
 import logo from '../../img/logo-saude-amiga.png'
+import login from '../../img/icones/login.png'
 import { Link } from 'react-router-dom'
 
 export default function Cabecalho() {
@@ -29,9 +30,10 @@ export default function Cabecalho() {
             </div>
 
             <div className='flex sm:flex-row items-center justify-between px-2 py-1 bg-gray-100 space-y-2 sm:space-y-0'>
-                <Link to="/">
-                    <img src={logo} className="w-24 sm:w-28 h-auto" alt="Logo Saúde Amiga" />
-                </Link>
+                <div className="flex items-center space-x-2">
+                    <Link to="/login"><img src={login} className="w-8 h-auto" alt="Icone Login"/></Link>
+                    <Link to="/"><img src={logo} className="w-28 h-auto" alt="Logo Saúde Amiga" /></Link>           
+                </div>
                 <Menu />
             </div>
         </header>
