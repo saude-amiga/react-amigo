@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import type { LoginFormData } from "../../types/loginFormData";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Login() {
   useEffect(() => {
     document.title = "Área de funcionários";
@@ -16,8 +18,22 @@ export default function Login() {
     reValidateMode: "onChange",
   });
 
-  const onSubmit = (data: LoginFormData) => {
-    console.log(data);
+  const onSubmit = async (data: LoginFormData) => {
+    try {
+      const resp = await fetch(`${API_URL}/usuarios?nomeUsuario=${data.nomeUsuario}&email=${data.email}`);
+      if (!resp.ok) throw new Error("Falha ao requisitar json de objeto usuário");
+      const user = await resp.json();
+      if (user.length !== 0) {
+        alert("Usuário logado com sucesso!");
+        localStorage.setItem("usuario", JSON.stringify(user[0]));
+        window.location.reload();
+      } else {
+        alert("Usuário não encontrado.");
+      }
+    } catch (e) {
+      alert("Erro no processo de login!");
+      console.error("Erro ao requisitar objeto usuário!");
+    }
   };
 
   return (
