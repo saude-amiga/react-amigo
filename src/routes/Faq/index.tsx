@@ -34,20 +34,17 @@ export default function FormPergunta() {
   };
 
   return (
-    <main className="bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
-      {/* Lista de perguntas */}
+    <main className="bg-white">
       <section className="mb-10">
         <FaqLista />
       </section>
 
-      {/* Formulário */}
       <section className="max-w-full sm:max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-md">
         <h2 className="text-xl sm:text-2xl font-bold text-center text-[#194737] mb-6">
           Envie-nos sua pergunta
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Nome */}
           <div>
             <label htmlFor="idNome" className="block text-sm font-medium text-gray-700">
               Nome:
@@ -65,7 +62,6 @@ export default function FormPergunta() {
             {errors.nome && <p className="text-red-500 text-sm mt-1">{errors.nome.message}</p>}
           </div>
 
-          {/* Celular */}
           <div>
             <label htmlFor="idCelular" className="block text-sm font-medium text-gray-700">
               Número do Celular:
@@ -89,7 +85,6 @@ export default function FormPergunta() {
             {errors.celular && <p className="text-red-500 text-sm mt-1">{errors.celular.message}</p>}
           </div>
 
-          {/* Email */}
           <div>
             <label htmlFor="idEmail" className="block text-sm font-medium text-gray-700">
               Email:
@@ -113,7 +108,6 @@ export default function FormPergunta() {
             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
           </div>
 
-          {/* Assunto */}
           <div>
             <label htmlFor="idAssunto" className="block text-sm font-medium text-gray-700">Assunto:</label>
             <select id="idAssunto" {...register("assunto")}
@@ -127,7 +121,6 @@ export default function FormPergunta() {
             </select>
           </div>
 
-          {/* Pergunta */}
           <div>
             <label htmlFor="idPergunta" className="block text-sm font-medium text-gray-700">
               Pergunta:
@@ -147,7 +140,6 @@ export default function FormPergunta() {
             {errors.pergunta && <p className="text-red-500 text-sm mt-1">{errors.pergunta.message}</p>}
           </div>
 
-          {/* Botão */}
           <div>
             <button
               type="submit"
