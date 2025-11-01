@@ -16,7 +16,7 @@ if (!faq) {
       </p>
       <button
         onClick={() => navigate("/perguntas-frequentes")}
-        className="inline-block bg-[#76b99d] text-[#194737] font-semibold px-4 py-2 rounded hover:bg-white transition">
+        className="cursor-pointer nline-block bg-[#76b99d] text-[#194737] font-semibold px-4 py-2 rounded hover:bg-white transition">
         Voltar para perguntas
       </button>
     </section>
@@ -25,7 +25,7 @@ if (!faq) {
 
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <main className="bg-white max-w-3xl mx-auto p-6">
       <h2 className="text-2xl font-bold text-[#194737] mb-4">{faq.titulo}</h2>
 
       <p className="text-sm text-gray-600 mb-2">
@@ -50,9 +50,9 @@ if (!faq) {
 
       <button
         onClick={() => navigate("/perguntas-frequentes")}
-        className="px-4 py-2 bg-[#194737] text-white rounded hover:bg-[#76b99d] transition">
+        className="cursor-pointer px-4 py-2 bg-[#194737] text-white rounded hover:bg-[#76b99d] transition">
         Voltar para perguntas
       </button>
-    </div>
+    </main>
   );
 }

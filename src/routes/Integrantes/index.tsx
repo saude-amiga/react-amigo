@@ -25,10 +25,10 @@ export default function Integrantes() {
               <p>1TDSPO</p>
               <div className="mt-2 space-x-2 flex">
                 <a href="https://www.linkedin.com/in/victorsabelli/" target="_blank">
-                  <img src={linkedin} alt="Icone do Linkedin" className='w-20 h-auto' />
+                  <img src={linkedin} alt="Icone do Linkedin" className='hover:scale-110 transition w-20 h-auto ' />
                 </a>
                 <a href="https://github.com/Sabelli" target="_blank">
-                  <img src={github} alt="icone do github" className='w-20 h-auto' />
+                  <img src={github} alt="icone do github" className='hover:scale-110 transition w-20 h-auto' />
                 </a>
               </div>
             </div>
@@ -40,10 +40,10 @@ export default function Integrantes() {
               <p>1TDSPO</p>
               <div className="mt-2 space-x-2 flex">
                 <a href="https://www.linkedin.com/in/vinicius-soteras-braga-60335516a/" target="_blank">
-                  <img src={linkedin} alt="Icone do Linkedin" className='w-20 h-auto' />
+                  <img src={linkedin} alt="Icone do Linkedin" className='hover:scale-110 transition w-20 h-auto' />
                 </a>
                 <a href="https://github.com/BragaSoterasVinicius" target="_blank">
-                  <img src={github} alt="icone do github" className='w-20 h-auto' />
+                  <img src={github} alt="icone do github" className='hover:scale-110 transition w-20 h-auto' />
                 </a>
               </div>
             </div>
@@ -55,10 +55,10 @@ export default function Integrantes() {
               <p>1TDSPO</p>
               <div className="mt-2 space-x-2 flex">
                 <a href="https://www.linkedin.com/in/rafael-kubagawa-ramos-243896330" target="_blank">
-                  <img src={linkedin} alt="Icone do Linkedin" className='w-20 h-auto' />
+                  <img src={linkedin} alt="Icone do Linkedin" className='hover:scale-110 transition w-20 h-auto' />
                 </a>
                 <a href="https://github.com/Rafaelkubagawa" target="_blank">
-                  <img src={github} alt="icone do github" className='w-20 h-auto' />
+                  <img src={github} alt="icone do github" className='hover:scale-110 transition w-20 h-auto' />
                 </a>
               </div>
             </div>
