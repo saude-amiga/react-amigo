@@ -11,7 +11,7 @@ export default function CardPergunta({ faq }: CardFaq) {
   return (
     <button
       onClick={() => irParaResposta(faq.id)}
-      className="w-full max-w-[95vw] sm:max-w-md mx-auto text-center bg-[#76b99d] text-[#194737] font-semibold px-4 py-3 rounded hover:bg-white transition shadow-sm"
+      className="cursor-pointer w-full max-w-[95vw] sm:max-w-md mx-auto text-center bg-[#76b99d] text-[#194737] font-semibold px-4 py-3 rounded hover:bg-white transition shadow-sm"
     >
       {faq.titulo}
     </button>

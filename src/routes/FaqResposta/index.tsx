@@ -16,7 +16,7 @@ if (!faq) {
       </p>
       <button
         onClick={() => navigate("/perguntas-frequentes")}
-        className="inline-block bg-[#76b99d] text-[#194737] font-semibold px-4 py-2 rounded hover:bg-white transition">
+        className="cursor-pointer nline-block bg-[#76b99d] text-[#194737] font-semibold px-4 py-2 rounded hover:bg-white transition">
         Voltar para perguntas
       </button>
     </section>
@@ -50,7 +50,7 @@ if (!faq) {
 
       <button
         onClick={() => navigate("/perguntas-frequentes")}
-        className="px-4 py-2 bg-[#194737] text-white rounded hover:bg-[#76b99d] transition">
+        className="cursor-pointer px-4 py-2 bg-[#194737] text-white rounded hover:bg-[#76b99d] transition">
         Voltar para perguntas
       </button>
     </main>

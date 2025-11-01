@@ -111,7 +111,7 @@ export default function FormPergunta() {
           <div>
             <label htmlFor="idAssunto" className="block text-sm font-medium text-gray-700">Assunto:</label>
             <select id="idAssunto" {...register("assunto")}
-            className="mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+            className="cursor-pointer mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
               <option value="aplicativoHC">Aplicativo HC</option>
               <option value="aplicativoSA">Aplicativo Saúde Amiga</option>
               <option value="chatBot">ChatBot</option>
@@ -144,7 +144,7 @@ export default function FormPergunta() {
             <button
               type="submit"
               id="botaoEnviar"
-              className="w-full bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#76b99d] transition"
+              className="cursor-pointer w-full bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#76b99d] transition"
             >
               Enviar Pergunta
             </button>
