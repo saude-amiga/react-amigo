@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Agendamento(){
     useEffect(()=>{
-        document.title = "Agendamento de Oficinas";
+        document.title = "Agendamento";
     },[])
 
     const[agendado, setAgendado] = useState(false);
@@ -11,7 +11,7 @@ export default function Agendamento(){
         <main>
             <div>
                 <h1>
-                    Agendamento de Oficinas
+                    Agendamento
                 </h1>
                 <p>Reserve seu horário e participe das oficinas presenciais de inclusão digital</p>
             </div>
