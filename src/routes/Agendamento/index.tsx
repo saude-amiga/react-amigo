@@ -69,7 +69,9 @@ export default function Agendamento(){
                     })}
                 
                 />
-                
+                {errors.email && (
+                    <p>{errors.email.message}</p>
+                )}
             </div>
         </form>
         </main>
