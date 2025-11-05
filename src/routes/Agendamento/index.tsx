@@ -73,6 +73,27 @@ export default function Agendamento(){
                     <p>{errors.email.message}</p>
                 )}
             </div>
+            <div>
+                <label htmlFor="date">
+                    Data
+                </label>
+                <input type="date"
+                id="data"
+                {
+                    ...register("data", {
+                        required:"A data é obrigatória.",
+                        validate: (value) => {
+                            const hoje = new Date().toISOString().split("T")[0];
+                            return value >= hoje || "Escolha uma data futura";
+                        }
+                    })}
+                
+                />
+                {errors.data && (
+                    <p>{errors.data.message}</p>
+                )}
+            </div>
+            
         </form>
         </main>
     );
