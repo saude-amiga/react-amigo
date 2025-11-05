@@ -1,5 +1,5 @@
 
-type AgendamentoFormData = {
+export type AgendamentoFormData = {
     nome: string;
     email: string;
     data: string;
