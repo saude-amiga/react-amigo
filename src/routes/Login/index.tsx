@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import type { LoginFormData } from "../../types/loginFormData";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Login() {
-  useEffect(() => {
-    document.title = "Área de funcionários";
-  }, []);
-
+  const navigate = useNavigate();
   const [exibeLoginNaoEncontrado, setExibeLoginNaoEncontrado] = useState<boolean>(false);
+
+  useEffect(() => {
+    document.title = "Login de funcionários";
+
+    const usuarioLogado = localStorage.getItem("usuario");
+    if (usuarioLogado) {
+      navigate("/funcionarios");
+    }
+  }, [navigate]);
 
   const {
     handleSubmit,
@@ -18,18 +25,27 @@ export default function Login() {
   } = useForm<LoginFormData>({
     mode: "onChange",
     reValidateMode: "onChange",
+    defaultValues: {
+      nomeUsuario: "",
+      email: "",
+    },
   });
 
   const onSubmit = async (data: LoginFormData) => {
     try {
-      const resp = await fetch(`${API_URL}/usuarios?nomeUsuario=${data.nomeUsuario}&email=${data.email}`);
+      const resp = await fetch(
+        `${API_URL}/usuarios?nomeUsuario=${data.nomeUsuario}&email=${data.email}`
+      );
+
       if (!resp.ok) throw new Error("Falha ao requisitar json de objeto usuário");
+
       const user = await resp.json();
+
       if (user.length !== 0) {
         setExibeLoginNaoEncontrado(false);
-        alert("Usuário logado com sucesso!");
         localStorage.setItem("usuario", JSON.stringify(user[0]));
-        window.location.reload();
+        alert("Usuário logado com sucesso!");
+        navigate("/admin");
       } else {
         setExibeLoginNaoEncontrado(true);
       }
@@ -51,9 +67,14 @@ export default function Login() {
             <input
               type="text"
               id="nomeUsuario"
-              placeholder="Insira seu nome de usuário"
-              {...register("nomeUsuario", { required: "O nome de usuário é obrigatório!" })}
-              className="w-full px-4 py-2 rounded-md bg-white border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]"
+              placeholder="Digite o seu nome"
+              maxLength={100}
+              {...register("nomeUsuario", {
+                required: "Nome é obrigatório.",
+              })}
+              className={`w-full px-4 py-2 rounded-md bg-white border ${
+                errors.nomeUsuario ? "border-red-500" : "border-gray-300"
+              } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
             />
             {errors.nomeUsuario && (
               <p className="text-red-500 text-sm mt-1">{errors.nomeUsuario.message}</p>
@@ -65,16 +86,20 @@ export default function Login() {
               Email
             </label>
             <input
-              type="email"
-              placeholder="Insira seu email"
+              type="text"
+              id="email"
+              placeholder="Digite o seu email"
+              maxLength={60}
               {...register("email", {
-                required: "Seu email é obrigatório.",
+                required: "Email é obrigatório.",
                 pattern: {
-                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: "Esse email não é válido!",
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Email inválido.",
                 },
               })}
-              className="w-full px-4 py-2 rounded-md bg-white border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]"
+              className={`w-full px-4 py-2 rounded-md bg-white border ${
+                errors.email ? "border-red-500" : "border-gray-300"
+              } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
             />
             {errors.email && (
               <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
