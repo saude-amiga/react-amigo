@@ -123,6 +123,12 @@ export default function Agendamento(){
                     {...register ("observacoes")}
                 />
             </div>
+            <button
+                type="submit"
+                disabled={!isValid}
+            >
+                Confirmar Agendamento
+            </button>
         </form>
         </main>
     );
