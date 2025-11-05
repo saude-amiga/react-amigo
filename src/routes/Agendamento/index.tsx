@@ -52,7 +52,25 @@ export default function Agendamento(){
                          />
                         {errors.nome && (<p>{errors.nome.message}</p>)}
             </div>
-            
+            <div>
+                <label htmlFor="email">
+                    Email
+                </label>
+                <input type="text"
+                id="email"
+                placeholder="Insira seu email"
+                {
+                    ...register("email", {
+                        required:"O email é obrigatório.",
+                        pattern: {
+                            value:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]+\.[a-zA-Z]{2,}$/,
+                            message: "Esse email não é válido!",
+                        },
+                    })}
+                
+                />
+                
+            </div>
         </form>
         </main>
     );
