@@ -112,6 +112,17 @@ export default function Agendamento(){
                     )}
                 </div>
             </div>
+
+            <div>
+                <label htmlFor="observacoes">
+                    Observações (opcional)
+                </label>
+                <textarea
+                    id="observacoes"
+                    placeholder="Digite observações adicionais..."
+                    {...register ("observacoes")}
+                />
+            </div>
         </form>
         </main>
     );
