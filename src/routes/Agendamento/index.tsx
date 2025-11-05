@@ -8,6 +8,7 @@ export default function Agendamento(){
     },[])
 
     const{
+        register,
         handleSubmit,
         reset,
         formState:{errors, isValid},
@@ -36,7 +37,23 @@ export default function Agendamento(){
                 Seu agendamento foi realizado com sucesso!
             </div>
         )}
-        <form onSubmit={handleSubmit(onSubmit)}></form>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <div>
+                <label htmlFor="nome">
+                    Nome Completo
+                </label>
+                <input type="text"
+                        id= "nome"
+                        placeholder="Insira seu nome completo"
+                        {...register("nome", {
+                            required: "O nome é obrigatório.",
+                            minLength: {value: 3, message: "o nome deve ter pelo menos 3 caracteres"}
+                        })}
+                         />
+                        {errors.nome && (<p>{errors.nome.message}</p>)}
+            </div>
+            
+        </form>
         </main>
     );
 }
