@@ -27,7 +27,6 @@ export default function FaqLista() {
         );
 
         setPerguntas(perguntasComResposta);
-        console.log(perguntasComResposta)
       } catch (error) {
         console.log(error);
       }
