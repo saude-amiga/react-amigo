@@ -7,10 +7,12 @@ export default function FaqResposta() {
   const navigate = useNavigate();
 
   const [dados, setDados] = useState<TipoFaq[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
+        setLoading(true);
         const response = await fetch("https://api-saude-amiga.onrender.com/pergunta", {
           method: "GET",
           headers: {
@@ -27,6 +29,8 @@ export default function FaqResposta() {
         setDados(data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -34,6 +38,14 @@ export default function FaqResposta() {
   }, []);
 
   const faq = dados.find((f) => f.id === Number(routeId));
+
+  if (loading) {
+    return (
+      <section className="bg-[#ffffff] p-6 max-w-xl mx-auto mt-16 rounded-lg shadow-md text-center text-[#194737]">
+        <h2 className="text-2xl font-bold mb-4 text-[#194737]">Carregando ...</h2>
+      </section>
+    );
+  }
 
   if (!faq) {
     return (
@@ -53,38 +65,38 @@ export default function FaqResposta() {
   }
 
   return (
-  <main className="flex">
-    <div className="bg-white max-w-3xl mx-auto p-6">
-      <h2 className="text-2xl font-bold text-[#194737] mb-4">{faq.titulo}</h2>
+    <main className="flex">
+      <div className="bg-white max-w-3xl mx-auto p-6">
+        <h2 className="text-2xl font-bold text-[#194737] mb-4">{faq.titulo}</h2>
 
-      <p className="text-sm text-gray-600 mb-2">
-        <strong className="font-medium text-gray-700">Autor(a) da Pergunta:</strong>{" "}
-        {faq.autorDaPergunta}
-      </p>
-
-      <p
-        className="text-gray-700 mb-3 leading-relaxed resp-link"
-        dangerouslySetInnerHTML={{ __html: faq.corpo || "" }}
-      />
-
-      <div className="text-sm text-gray-500 space-y-1 mb-6">
-        <p>
-          <strong className="text-gray-600">Autor(a) da Resposta:</strong>{" "}
-          {faq.autorDaResposta}
+        <p className="text-sm text-gray-600 mb-2">
+          <strong className="font-medium text-gray-700">Autor(a) da Pergunta:</strong>{" "}
+          {faq.autorDaPergunta}
         </p>
-        <p>
-          <strong className="text-gray-600">Data da resposta:</strong>{" "}
-          {new Date(faq.data_resposta).toLocaleDateString()}
-        </p>
+
+        <p
+          className="text-gray-700 mb-3 leading-relaxed resp-link"
+          dangerouslySetInnerHTML={{ __html: faq.corpo || "" }}
+        />
+
+        <div className="text-sm text-gray-500 space-y-1 mb-6">
+          <p>
+            <strong className="text-gray-600">Autor(a) da Resposta:</strong>{" "}
+            {faq.nomeAutorResposta}
+          </p>
+          <p>
+            <strong className="text-gray-600">Data da resposta:</strong>{" "}
+            {new Date(faq.data).toLocaleDateString()}
+          </p>
+        </div>
+
+        <button
+          onClick={() => navigate("/perguntas-frequentes")}
+          className="cursor-pointer px-4 py-2 bg-[#194737] text-white rounded hover:bg-[#76b99d] transition"
+        >
+          Voltar para perguntas
+        </button>
       </div>
-
-      <button
-        onClick={() => navigate("/perguntas-frequentes")}
-        className="cursor-pointer px-4 py-2 bg-[#194737] text-white rounded hover:bg-[#76b99d] transition"
-      >
-        Voltar para perguntas
-      </button>
-    </div>
     </main>
   );
 }
