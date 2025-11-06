@@ -74,7 +74,7 @@ export default function FaqResposta() {
         </p>
         <p>
           <strong className="text-gray-600">Data da resposta:</strong>{" "}
-          {new Date(faq.data_resposta).toLocaleDateString()}
+          {new Date(faq.data).toLocaleDateString()}
         </p>
       </div>
 
