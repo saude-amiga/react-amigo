@@ -41,8 +41,9 @@ export default function Login() {
       if (!resp.ok) throw new Error("Erro ao autenticar usuário.");
 
       const usuario: Usuario = await resp.json();
+      console.log("Usuário retornado:", usuario);
 
-      if (usuario.is_funcionario = true) {
+      if (usuario.funcionario) {
         setExibeLoginNaoEncontrado(false);
         navigate("/funcionarios");
       } else {
