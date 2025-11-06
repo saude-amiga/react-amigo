@@ -70,7 +70,7 @@ export default function FaqResposta() {
       <div className="text-sm text-gray-500 space-y-1 mb-6">
         <p>
           <strong className="text-gray-600">Autor(a) da Resposta:</strong>{" "}
-          {faq.autorDaResposta}
+          {faq.nomeAutorResposta}
         </p>
         <p>
           <strong className="text-gray-600">Data da resposta:</strong>{" "}
