@@ -22,9 +22,7 @@ export default function FaqLista() {
         }
 
         const data: TipoFaq[] = await response.json();
-
         const perguntasComResposta = data.filter((faq) => faq.corpo);
-
         setPerguntas(perguntasComResposta);
       } catch (error) {
         console.log(error);
@@ -44,7 +42,20 @@ export default function FaqLista() {
 
       <div className="flex flex-col items-center gap-4 w-full">
         {loading ? (
-          <p className="text-gray-500">Carregando perguntas frequentes...</p>
+          <section className="bg-[#ffffff] p-6 max-w-xl mx-auto mt-8 rounded-lg shadow-md text-center text-[#194737]">
+            <h2 className="text-2xl font-bold mb-4 text-[#194737]">
+              Carregando ...
+            </h2>
+          </section>
+        ) : perguntas.length === 0 ? (
+          <section className="bg-[#ffffff] p-6 max-w-xl mx-auto mt-8 rounded-lg shadow-md text-center text-[#194737]">
+            <h2 className="text-2xl font-bold mb-4 text-[#194737]">
+              Nenhuma pergunta encontrada
+            </h2>
+            <p className="mb-6">
+              No momento não há perguntas frequentes disponíveis.
+            </p>
+          </section>
         ) : (
           perguntas.map((faq) => (
             <div key={faq.id} className="w-full max-w-[95vw] sm:max-w-md">
