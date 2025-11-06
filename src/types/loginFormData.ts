@@ -1,4 +1,10 @@
 export type LoginFormData = {
-    nomeUsuario: string;
     email: string;
+    senha: string;
+}
+
+export type Usuario = {
+    email: string;
+    senha: string;
+    is_funcionario: number;
 }

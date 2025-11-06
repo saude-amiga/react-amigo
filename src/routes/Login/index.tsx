@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import type { LoginFormData } from "../../types/loginFormData";
-
-const API_URL = import.meta.env.VITE_API_URL;
+import type { LoginFormData, Usuario } from "../../types/loginFormData";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -11,12 +9,7 @@ export default function Login() {
 
   useEffect(() => {
     document.title = "Login de funcionários";
-
-    const usuarioLogado = localStorage.getItem("usuario");
-    if (usuarioLogado) {
-      navigate("/funcionarios");
-    }
-  }, [navigate]);
+  }, []);
 
   const {
     handleSubmit,
@@ -26,30 +19,37 @@ export default function Login() {
     mode: "onChange",
     reValidateMode: "onChange",
     defaultValues: {
-      nomeUsuario: "",
       email: "",
+      senha: "",
     },
   });
 
   const onSubmit = async (data: LoginFormData) => {
     try {
-      const resp = await fetch(
-        `${API_URL}/usuarios?nomeUsuario=${data.nomeUsuario}&email=${data.email}`
+      const resp = await fetch("https://api-saude-amiga.onrender.com/usuario", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "chave-primaria",
+        },
+      });
+
+      if (!resp.ok) throw new Error("Erro ao buscar usuários da API.");
+
+      const usuarios: Usuario[] = await resp.json();
+
+      const usuarioValido = usuarios.find(
+        (u) => u.is_funcionario === 1 && u.email === data.email && u.senha === data.senha
       );
 
-      if (!resp.ok) throw new Error("Falha ao requisitar json de objeto usuário");
-
-      const user = await resp.json();
-
-      if (user.length !== 0) {
+      if (usuarioValido) {
         setExibeLoginNaoEncontrado(false);
-        localStorage.setItem("usuario", JSON.stringify(user[0]));
-        alert("Usuário logado com sucesso!");
-        navigate("/admin");
+        navigate("/funcionarios");
       } else {
         setExibeLoginNaoEncontrado(true);
       }
-    } catch {
+    } catch (error) {
+      console.error("Erro no login:", error);
       alert("Erro no processo de login!");
     }
   };
@@ -60,27 +60,6 @@ export default function Login() {
         <h1 className="text-2xl font-bold mb-6 text-center text-[#194737]">Área de Funcionários</h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div>
-            <label htmlFor="nomeUsuario" className="block text-sm font-medium mb-1 text-[#194737]">
-              Nome de Usuário
-            </label>
-            <input
-              type="text"
-              id="nomeUsuario"
-              placeholder="Digite o seu nome"
-              maxLength={100}
-              {...register("nomeUsuario", {
-                required: "Nome é obrigatório.",
-              })}
-              className={`w-full px-4 py-2 rounded-md bg-white border ${
-                errors.nomeUsuario ? "border-red-500" : "border-gray-300"
-              } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
-            />
-            {errors.nomeUsuario && (
-              <p className="text-red-500 text-sm mt-1">{errors.nomeUsuario.message}</p>
-            )}
-          </div>
-
           <div>
             <label htmlFor="email" className="block text-sm font-medium mb-1 text-[#194737]">
               Email
@@ -106,6 +85,27 @@ export default function Login() {
             )}
           </div>
 
+          <div>
+            <label htmlFor="senha" className="block text-sm font-medium mb-1 text-[#194737]">
+              Senha
+            </label>
+            <input
+              type="password"
+              id="senha"
+              placeholder="Digite sua senha"
+              maxLength={100}
+              {...register("senha", {
+                required: "Senha é obrigatória.",
+              })}
+              className={`w-full px-4 py-2 rounded-md bg-white border ${
+                errors.senha ? "border-red-500" : "border-gray-300"
+              } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
+            />
+            {errors.senha && (
+              <p className="text-red-500 text-sm mt-1">{errors.senha.message}</p>
+            )}
+          </div>
+
           <button
             type="submit"
             id="botaoLogin"
@@ -116,7 +116,7 @@ export default function Login() {
 
           {exibeLoginNaoEncontrado && (
             <p className="text-red-500 text-sm mt-4 text-center">
-              Nome de usuário ou email incorreto
+              Email ou senha incorretos ou não autorizado
             </p>
           )}
         </form>
