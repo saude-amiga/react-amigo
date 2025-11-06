@@ -8,29 +8,50 @@ export default function FormPergunta() {
     document.title = "Perguntas";
   }, []);
 
-  const { register, handleSubmit, reset,
-    formState: { errors, isSubmitSuccessful } 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitSuccessful },
   } = useForm<FormData>({
     mode: "onChange",
     reValidateMode: "onChange",
     defaultValues: {
-      nome: "",
+      autorDaPergunta: "",
       celular: "",
       email: "",
       assunto: "Aplicativo HC",
-      pergunta: "",
+      titulo: "",
     },
   });
-  
+
   useEffect(() => {
     if (isSubmitSuccessful) {
       reset();
     }
   }, [isSubmitSuccessful, reset]);
 
-  const onSubmit = (data: FormData) => {
-    console.log("Dados válidos:", data);
-    alert("Pergunta enviada com sucesso!");
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await fetch("https://api-saude-amiga.onrender.com/pergunta", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "chave-primaria",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao enviar a pergunta para a API.");
+      }
+
+      alert("Pergunta enviada com sucesso!");
+      console.log("Dados enviados:", data);
+    } catch (error) {
+      console.error("Erro no envio:", error);
+      alert("Ocorreu um erro ao enviar sua pergunta. Tente novamente mais tarde.");
+    }
   };
 
   return (
@@ -46,20 +67,22 @@ export default function FormPergunta() {
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label htmlFor="idNome" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="idAutor" className="block text-sm font-medium text-gray-700">
               Nome:
             </label>
             <input
               type="text"
-              id="idNome"
+              id="idAutor"
               placeholder="Digite o seu nome"
               maxLength={100}
-              {...register("nome", { required: "Nome é obrigatório." })}
+              {...register("autorDaPergunta", { required: "Nome é obrigatório." })}
               className={`mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring ${
-                errors.nome ? "border-red-500" : "border-gray-300"
+                errors.autorDaPergunta ? "border-red-500" : "border-gray-300"
               }`}
             />
-            {errors.nome && <p className="text-red-500 text-sm mt-1">{errors.nome.message}</p>}
+            {errors.autorDaPergunta && (
+              <p className="text-red-500 text-sm mt-1">{errors.autorDaPergunta.message}</p>
+            )}
           </div>
 
           <div>
@@ -109,9 +132,14 @@ export default function FormPergunta() {
           </div>
 
           <div>
-            <label htmlFor="idAssunto" className="block text-sm font-medium text-gray-700">Assunto:</label>
-            <select id="idAssunto" {...register("assunto")}
-            className="cursor-pointer mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300">
+            <label htmlFor="idAssunto" className="block text-sm font-medium text-gray-700">
+              Assunto:
+            </label>
+            <select
+              id="idAssunto"
+              {...register("assunto")}
+              className="cursor-pointer mt-1 block w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-blue-300"
+            >
               <option value="aplicativoHC">Aplicativo HC</option>
               <option value="aplicativoSA">Aplicativo Saúde Amiga</option>
               <option value="chatBot">ChatBot</option>
@@ -122,22 +150,22 @@ export default function FormPergunta() {
           </div>
 
           <div>
-            <label htmlFor="idPergunta" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="idTitulo" className="block text-sm font-medium text-gray-700">
               Pergunta:
             </label>
             <input
               type="text"
-              id="idPergunta"
+              id="idTitulo"
               placeholder="Digite sua pergunta"
               maxLength={1000}
-              {...register("pergunta", {
+              {...register("titulo", {
                 required: "Pergunta é obrigatória.",
               })}
               className={`mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring ${
-                errors.pergunta ? "border-red-500" : "border-gray-300"
+                errors.titulo ? "border-red-500" : "border-gray-300"
               }`}
             />
-            {errors.pergunta && <p className="text-red-500 text-sm mt-1">{errors.pergunta.message}</p>}
+            {errors.titulo && <p className="text-red-500 text-sm mt-1">{errors.titulo.message}</p>}
           </div>
 
           <div>

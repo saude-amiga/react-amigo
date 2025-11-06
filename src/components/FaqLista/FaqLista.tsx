@@ -1,4 +1,3 @@
-import { ListaFaq } from "../../data/listaFaq";
 import { useEffect, useState } from "react";
 import type { TipoFaq } from "../../types/tipoFaq";
 import CardFaq from "../CardPergunta/CardPergunta";
@@ -7,7 +6,33 @@ export default function FaqLista() {
   const [perguntas, setPerguntas] = useState<TipoFaq[]>([]);
 
   useEffect(() => {
-    setPerguntas(ListaFaq);
+    async function fetchData() {
+      try {
+        const response = await fetch("https://api-saude-amiga.onrender.com/pergunta", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "chave-primaria",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Erro na requisição da api do Java!");
+        }
+
+        const data: TipoFaq[] = await response.json();
+
+        const perguntasComResposta= data.filter(
+          (faq) => faq.corpo
+        );
+
+        setPerguntas(perguntasComResposta);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchData();
   }, []);
 
   return (
