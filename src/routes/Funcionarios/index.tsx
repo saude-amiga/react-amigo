@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default function Home() {
+export default function Funcionarios() {
   useEffect(() => {
     document.title = "Área de Funcionários";
   }, []);
