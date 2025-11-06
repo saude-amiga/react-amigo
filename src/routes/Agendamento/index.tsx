@@ -26,19 +26,18 @@ export default function Agendamento(){
         reset(); 
     }
     return(
-        <main>
-            <div>
-                <h1>
+        <main className="bg-[#fffff] text-[#194737] min-h-screen flex items-center justify-center px-4 py-10">
+            <div className="w-full max-2-2xl bg-[#76b99d] p-8 rounded-lg shadow-md">
+                <h1 className="text-exl font-bold text=[#194737] mb-6 text-center">
                     Agendamento
                 </h1>
-            </div>
-            {agendado && (<div>
+            {agendado && (<div className="bg-white border-green-500 font-bold text--[#194737] p-3 rounded mb-6 text-center">
                 Seu agendamento foi realizado com sucesso!
             </div>
         )}
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-6 rounded-lg shadow-inner">
             <div>
-                <label htmlFor="nome">
+                <label htmlFor="nome" className="block text-sm font-medium mb-1 text-[#194737]">
                     Nome Completo
                 </label>
                 <input type="text"
@@ -48,11 +47,14 @@ export default function Agendamento(){
                             required: "O nome é obrigatório.",
                             minLength: {value: 3, message: "o nome deve ter pelo menos 3 caracteres"}
                         })}
+                        className="w-full px-4 py-2 rounded-md border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]"
                          />
-                        {errors.nome && (<p>{errors.nome.message}</p>)}
+                        {errors.nome && (
+                            <p className="text-red-500 text-sm mt-1">{errors.nome.message}</p>
+                            )}
             </div>
             <div>
-                <label htmlFor="email">
+                <label htmlFor="email" className="block text-sm font-medium mb-1 text-[#194737]">
                     Email
                 </label>
                 <input type="text"
@@ -66,16 +68,16 @@ export default function Agendamento(){
                             message: "Esse email não é válido!",
                         },
                     })}
-                
+                        className="w-full px-4 py-2 rounded-md border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]"
                 />
                 {errors.email && (
-                    <p>{errors.email.message}</p>
+                    <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                 )}
             </div>
             
             <div>
                 <div>
-                    <label htmlFor="date">
+                    <label htmlFor="date" className="block text-sm font-medium mb-1 text-[#194737]">
                         Data
                     </label>
                     <input type="date"
@@ -88,15 +90,16 @@ export default function Agendamento(){
                                 return value >= hoje || "Escolha uma data futura";
                             }
                         })}
+                        className="w-full px-4 py-2 rounded-md border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]"
                     
                     />
                     {errors.data && (
-                        <p>{errors.data.message}</p>
+                        <p className="text-red-500 text-sm mt-1">{errors.data.message}</p>
                     )}
                 </div>
 
                 <div>
-                    <label htmlFor="horario">
+                    <label htmlFor="horario" className="block text-sm font-medium mb-1 text-[#194737]">
                         Horário
                     </label>
                     <input type="time"
@@ -105,30 +108,38 @@ export default function Agendamento(){
                         ...register("horario", {
                             required:"O horario é obrigatório.",
                         })}
+                        className="w-full px-4 py-2 rounded-md border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]"
                     />
                     {errors.horario && (
-                        <p>{errors.horario.message}</p>
+                        <p className="text-red-500 text-sm mt-1">{errors.horario.message}</p>
                     )}
                 </div>
             </div>
 
             <div>
-                <label htmlFor="observacoes">
+                <label htmlFor="observacoes" className="block text-sm font-medium mb-1 text-[#194737]">
                     Observações (opcional)
                 </label>
                 <textarea
                     id="observacoes"
                     placeholder="Digite observações adicionais..."
                     {...register ("observacoes")}
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a] h-24"
                 />
             </div>
             <button
                 type="submit"
                 disabled={!isValid}
+                className={`w-full py-2 rounded-md font-semibold transition-colors ${
+                    isValid
+                        ? "bg-[#29966a] text-white hover:bg-[194737]"
+                        : "bg-gray-400 text-gray-200 cursor-not-allowed"
+                }`}
             >
                 Confirmar Agendamento
             </button>
         </form>
+        </div>
         </main>
     );
 }
