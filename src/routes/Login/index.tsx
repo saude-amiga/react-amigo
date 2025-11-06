@@ -26,23 +26,23 @@ export default function Login() {
 
   const onSubmit = async (data: LoginFormData) => {
     try {
-      const resp = await fetch("https://api-saude-amiga.onrender.com/usuario", {
-        method: "GET",
+      const resp = await fetch("https://api-saude-amiga.onrender.com/usuario/login", {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           "x-api-key": "chave-primaria",
         },
+        body: JSON.stringify({
+          email: data.email,
+          senha: data.senha,
+        }),
       });
 
-      if (!resp.ok) throw new Error("Erro ao buscar usuários da API.");
+      if (!resp.ok) throw new Error("Erro ao autenticar usuário.");
 
-      const usuarios: Usuario[] = await resp.json();
+      const usuario: Usuario = await resp.json();
 
-      const usuarioValido = usuarios.find(
-        (u) => u.is_funcionario === 1 && u.email === data.email && u.senha === data.senha
-      );
-
-      if (usuarioValido) {
+      if (usuario.is_funcionario = true) {
         setExibeLoginNaoEncontrado(false);
         navigate("/funcionarios");
       } else {
@@ -53,6 +53,7 @@ export default function Login() {
       alert("Erro no processo de login!");
     }
   };
+
 
   return (
     <main className="bg-[#ffffff] text-[#194737] min-h-200 flex items-center justify-center px-4 py-10">
@@ -76,9 +77,8 @@ export default function Login() {
                   message: "Email inválido.",
                 },
               })}
-              className={`w-full px-4 py-2 rounded-md bg-white border ${
-                errors.email ? "border-red-500" : "border-gray-300"
-              } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
+              className={`w-full px-4 py-2 rounded-md bg-white border ${errors.email ? "border-red-500" : "border-gray-300"
+                } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
             />
             {errors.email && (
               <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -97,9 +97,8 @@ export default function Login() {
               {...register("senha", {
                 required: "Senha é obrigatória.",
               })}
-              className={`w-full px-4 py-2 rounded-md bg-white border ${
-                errors.senha ? "border-red-500" : "border-gray-300"
-              } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
+              className={`w-full px-4 py-2 rounded-md bg-white border ${errors.senha ? "border-red-500" : "border-gray-300"
+                } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
             />
             {errors.senha && (
               <p className="text-red-500 text-sm mt-1">{errors.senha.message}</p>
