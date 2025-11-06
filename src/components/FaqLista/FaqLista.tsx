@@ -4,6 +4,7 @@ import CardFaq from "../CardPergunta/CardPergunta";
 
 export default function FaqLista() {
   const [perguntas, setPerguntas] = useState<TipoFaq[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,13 +23,13 @@ export default function FaqLista() {
 
         const data: TipoFaq[] = await response.json();
 
-        const perguntasComResposta= data.filter(
-          (faq) => faq.corpo
-        );
+        const perguntasComResposta = data.filter((faq) => faq.corpo);
 
         setPerguntas(perguntasComResposta);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -42,11 +43,15 @@ export default function FaqLista() {
       </h2>
 
       <div className="flex flex-col items-center gap-4 w-full">
-        {perguntas.map((faq) => (
-          <div key={faq.id} className="w-full max-w-[95vw] sm:max-w-md">
-            <CardFaq faq={faq} />
-          </div>
-        ))}
+        {loading ? (
+          <p className="text-gray-500">Carregando perguntas frequentes...</p>
+        ) : (
+          perguntas.map((faq) => (
+            <div key={faq.id} className="w-full max-w-[95vw] sm:max-w-md">
+              <CardFaq faq={faq} />
+            </div>
+          ))
+        )}
       </div>
     </section>
   );
