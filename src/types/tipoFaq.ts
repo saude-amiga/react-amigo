@@ -3,6 +3,6 @@ export type TipoFaq = {
     titulo: string,
     corpo: string,
     autorDaPergunta:string,
-    autorDaResposta:string,
+    nomeAutorResposta:string,
     data_resposta: Date;
 }
