@@ -1,7 +1,7 @@
 export type FormData = {
-  nome: string;
+  autorDaPergunta: string;
   celular: string;
   email: string;
   assunto: string;
-  pergunta: string;
+  titulo: string;
 };
