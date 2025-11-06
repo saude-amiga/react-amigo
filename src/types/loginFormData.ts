@@ -6,5 +6,5 @@ export type LoginFormData = {
 export type Usuario = {
     email: string;
     senha: string;
-    is_funcionario: number;
+    is_funcionario: boolean;
 }
