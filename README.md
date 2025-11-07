@@ -133,6 +133,29 @@ react-amigo
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" width="30" alt="Vite"/> **Vite**
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="30" alt="TypeScript"/> **TypeScript**
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="30" alt="Tailwind CSS"/> **Tailwind CSS**
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="30" alt="Java"/> **Java**
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="30" alt="Vercel"/> **Vercel**
+- <img src="./src/img/icones/render.png" width="30" alt="Render"/> **Render**
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" width="30" alt="Postman"/> **Postman**
+
+## 🔗 API
+
+🌐 Endpoint da API
+
+https://api-saude-amiga.onrender.com/
+
+📬 Coleção no Postman
+
+https://www.postman.com/aviation-astronaut-85642828/sprint-4-java-saude-amiga/collection/f8xfw1q/sprint-4-java
+
+
+💻 Repositório da API
+
+https://github.com/saude-amiga/java-amigo-2
+
+<a href="https://github.com/saude-amiga/java-amigo-2" target="_blank">
+  <img src="https://img.shields.io/badge/GitHub-java--amigo-c6efce?style=flat&logo=github" width="20%"/>
+</a>
 
 ## 👨‍💻 Integrantes
 
@@ -167,13 +190,14 @@ https://github.com/saude-amiga/react-amigo
 
 **Veja mais sobre os recursos do projeto no nosso vídeo!**
 
-https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa
+AGUARDANDO LINK DA SPRINT 4
 
-<a href="https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa" target="_blank">
+<a href="" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-Apresentação%20Saúde%20Amiga-ff0000?style=flat&logo=youtube&logoColor=white" width="20%"/>
 </a>
 
+## 🚀 Deploy
 
+**O projeto está disponível online!**
 
-
-
+🔗 [react-amigo.vercel.app](https://react-amigo.vercel.app/)
