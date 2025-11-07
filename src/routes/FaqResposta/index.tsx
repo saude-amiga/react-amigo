@@ -41,7 +41,7 @@ export default function FaqResposta() {
 
   if (loading) {
     return (
-      <section className="bg-[#ffffff] p-6 max-w-xl mx-auto mt-16 rounded-lg shadow-md text-center text-[#194737]">
+      <section className="bg-[#ffffff] p-6 max-w-xl mx-auto mt-16 rounded-lg shadow-md text-center text-[#194737] shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-[#194737]">Carregando ...</h2>
       </section>
     );
@@ -49,7 +49,7 @@ export default function FaqResposta() {
 
   if (!faq) {
     return (
-      <section className="bg-[#ffffff] p-6 max-w-xl mx-auto mt-16 rounded-lg shadow-md text-center text-[#194737]">
+      <section className="bg-[#ffffff] p-6 max-w-xl mx-auto mt-16 rounded-lg shadow-md text-center text-[#194737] shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-[#194737]">Pergunta não encontrada</h2>
         <p className="mb-6">
           A pergunta que você está procurando não foi localizada. Talvez ela tenha sido removida ou esteja em outro lugar.
@@ -65,8 +65,8 @@ export default function FaqResposta() {
   }
 
   return (
-    <main className="flex">
-      <div className="bg-white max-w-3xl mx-auto p-6">
+    <main className="bg-white min-h-160 flex items-center justify-center p-6">
+      <div className="bg-white max-w-3xl mx-auto p-6 shadow-md">
         <h2 className="text-2xl font-bold text-[#194737] mb-4">{faq.titulo}</h2>
 
         <p className="text-sm text-gray-600 mb-2">

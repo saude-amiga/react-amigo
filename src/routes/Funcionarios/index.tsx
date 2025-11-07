@@ -27,13 +27,6 @@ export default function Funcionarios() {
           Área de Funcionários
         </h2>
 
-        <button
-          className="w-full bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#76b99d] transition"
-          onClick={handleLogout}
-        >
-          Deslogar
-        </button>
-
         <Link
           to="/responder"
           className="block w-full bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#76b99d] transition"
@@ -47,6 +40,14 @@ export default function Funcionarios() {
         >
           Agendamento
         </Link>
+
+        <button
+          className="cursor-pointer w-full bg-[#CC2004] text-white py-2 px-4 mt-6 rounded hover:bg-[#941600] transition"
+          onClick={handleLogout}
+        >
+          Deslogar
+        </button>
+
       </section>
     </main>
   );
