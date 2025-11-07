@@ -1,8 +1,6 @@
 
 export type AgendamentoFormData = {
-    nome: string;
-    email: string;
-    data: string;
-    horario: string;
-    observacoes?: string;
+    descricao: string;
+    pacienteId: number;
+    data: Date;
 };
