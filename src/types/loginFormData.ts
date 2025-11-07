@@ -1,10 +1,11 @@
 export type LoginFormData = {
-    email: string;
-    senha: string;
-}
+  email: string;
+  senha: string;
+};
 
 export type Usuario = {
-    email: string;
-    senha: string;
-    funcionario: boolean;
-}
+  token: string;
+  email: string;
+  senha: string;
+  funcionario: boolean;
+};
