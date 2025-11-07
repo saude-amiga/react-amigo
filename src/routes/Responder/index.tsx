@@ -96,23 +96,23 @@ export default function Responder() {
   };
 
   return (
-    <main className="bg-white min-h-screen flex items-center justify-center p-6">
-      <section className="max-w-full sm:max-w-2xl mx-auto p-6 sm:p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-center text-[#194737] mb-6">
+    <main className="bg-white min-h-screen flex flex-col items-center justify-center p-6">
+      <section className="w-full max-w-2xl bg-white p-6 sm:p-8 rounded-lg shadow-md text-center">
+        <h2 className="text-2xl font-bold text-[#194737] mb-6">
           Perguntas sem Resposta
         </h2>
 
         {carregando ? (
-          <p className="text-center text-gray-600">Carregando perguntas...</p>
+          <p className="text-gray-600">Carregando perguntas...</p>
         ) : perguntas.length === 0 ? (
-          <p className="text-center text-gray-600">Nenhuma pergunta pendente.</p>
+          <p className="text-gray-600">Nenhuma pergunta pendente.</p>
         ) : (
           <div className="flex flex-col items-center space-y-4 mb-8">
             {perguntas.map((p) => (
               <button
                 key={p.id}
                 onClick={() => setSelecionada(p)}
-                className="cursor-pointer w-full max-w-[95vw] text-center bg-[#76b99d] text-[#194737] font-semibold px-4 py-3 rounded hover:bg-white transition shadow-sm"
+                className="cursor-pointer w-full max-w-md text-center bg-[#76b99d] text-[#194737] font-semibold px-4 py-3 rounded hover:bg-white transition shadow-sm"
               >
                 {p.titulo}
               </button>
@@ -121,7 +121,7 @@ export default function Responder() {
         )}
 
         {selecionada && (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-left">
             <div className="bg-gray-100 p-4 rounded">
               <p className="text-sm text-gray-700"><strong>Respondendo a:</strong></p>
               <p className="text-md font-semibold text-[#194737]">{selecionada.titulo}</p>
@@ -167,16 +167,24 @@ export default function Responder() {
               )}
             </div>
 
-            <div>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-4">
               <button
                 type="submit"
-                className="cursor-pointer w-full bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#76b99d] transition"
+                className="w-full sm:w-auto bg-[#194737] text-white py-2 px-4 rounded hover:bg-[#76b99d] transition"
               >
                 Enviar Resposta
               </button>
+
             </div>
           </form>
         )}
+              <button
+                type="button"
+                onClick={() => navigate("/funcionarios")}
+                className="w-full sm:w-auto bg-gray-300 text-[#194737] m-4 py-2 px-4 rounded hover:bg-gray-400 transition"
+              >
+                Voltar para Área de funcionários
+              </button>
       </section>
     </main>
   );
