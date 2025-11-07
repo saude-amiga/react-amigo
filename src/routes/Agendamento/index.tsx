@@ -19,35 +19,49 @@ export default function Agendamento() {
 
   const [agendado, setAgendado] = useState(false);
 
-  const onSubmit = (data: AgendamentoFormData) => {
-    console.log("Agendamento enviado:", data);
-    setAgendado(true);
-    setTimeout(() => setAgendado(false), 4000);
-    reset();
+  const onSubmit = async (data: AgendamentoFormData) => {
+    try {
+      const resp = await fetch("https://api-saude-amiga.onrender.com/agendamento", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "chave-primaria",
+        },
+        body: JSON.stringify({
+          descricao: data.descricao,
+          pacienteId: data.pacienteId,
+          data: data.data,
+        }),
+      });
+
+      if (!resp.ok) throw new Error("Erro ao realizar agendamento.");
+
+      const resultado = await resp.json();
+      console.log("Agendamento realizado com sucesso:", resultado);
+
+      setAgendado(true);
+      reset();
+
+      setTimeout(() => setAgendado(false), 10000);
+    } catch (error) {
+      console.error("Erro no agendamento:", error);
+      alert("Erro ao tentar realizar o agendamento!");
+    }
   };
 
   return (
-    <main className="bg-[#fffff] text-[#194737] min-h-screen flex items-center justify-center px-4 py-10">
-      <div className="w-full max-w-md bg-[#76b99d] p-8 rounded-lg shadow-md">
+    <main className="bg-[#fffff] text-[#194737] min-h-screen flex items-center justify-center px-4 py-10 relative">
+      <div className="w-full max-w-md bg-[#76b99d] p-8 rounded-lg shadow-md z-10">
         <h1 className="text-xl font-bold text-[#194737] mb-6 text-center">
           Agendamento
         </h1>
-
-        {agendado && (
-          <div className="bg-white border-green-500 font-bold text-[#194737] p-3 rounded mb-6 text-center">
-            Seu agendamento foi realizado com sucesso!
-          </div>
-        )}
 
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-6 bg-white p-6 rounded-lg shadow-inner"
         >
           <div>
-            <label
-              htmlFor="descricao"
-              className="block text-sm font-medium mb-1 text-[#194737]"
-            >
+            <label htmlFor="descricao" className="block text-sm font-medium mb-1 text-[#194737]">
               Descrição
             </label>
             <input
@@ -60,17 +74,12 @@ export default function Agendamento() {
               className="w-full px-4 py-2 rounded-md border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]"
             />
             {errors.descricao && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.descricao.message}
-              </p>
+              <p className="text-red-500 text-sm mt-1">{errors.descricao.message}</p>
             )}
           </div>
 
           <div>
-            <label
-              htmlFor="pacienteId"
-              className="block text-sm font-medium mb-1 text-[#194737]"
-            >
+            <label htmlFor="pacienteId" className="block text-sm font-medium mb-1 text-[#194737]">
               ID do Paciente
             </label>
             <input
@@ -84,17 +93,12 @@ export default function Agendamento() {
               className="w-full px-4 py-2 rounded-md border border-gray-300 text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]"
             />
             {errors.pacienteId && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.pacienteId.message}
-              </p>
+              <p className="text-red-500 text-sm mt-1">{errors.pacienteId.message}</p>
             )}
           </div>
 
           <div>
-            <label
-              htmlFor="data"
-              className="block text-sm font-medium mb-1 text-[#194737]"
-            >
+            <label htmlFor="data" className="block text-sm font-medium mb-1 text-[#194737]">
               Data
             </label>
             <input
@@ -129,6 +133,20 @@ export default function Agendamento() {
           </button>
         </form>
       </div>
+
+      {agendado && (
+        <div className="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white text-[#194737] p-6 rounded-lg shadow-lg text-center">
+            <h2 className="text-lg font-bold mb-4">Agendamento realizado com sucesso</h2>
+            <button
+              onClick={() => setAgendado(false)}
+              className="bg-[#29966a] text-white px-4 py-2 rounded hover:bg-[#194737] transition-colors"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
