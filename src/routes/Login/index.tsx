@@ -120,7 +120,7 @@ export default function Login() {
 
           {exibeLoginNaoEncontrado && (
             <p className="text-red-500 text-sm mt-4 text-center">
-              Email ou senha incorretos ou não autorizado
+              Email ou senha incorretos
             </p>
           )}
         </form>
