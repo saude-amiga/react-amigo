@@ -12,8 +12,9 @@ import Contato from './routes/Contato/index.tsx'
 import FaqResposta from './routes/FaqResposta/index.tsx'
 import Login from './routes/Login/index.tsx'
 import Funcionarios from './routes/Funcionarios/index.tsx'
-import './global.css'
 import Agendamento from './routes/Agendamento/index.tsx'
+import Responder from './routes/Responder/index.tsx'
+import './global.css'
 
 const router = createBrowserRouter([
   {path:"/", element:<App/>, errorElement:<Error/>, children:[
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
     {path:"/contato", element:<Contato/>},
     {path:"/agendamento", element:<Agendamento/>},
     {path:"/login", element:<Login/>},
-    {path:"/funcionarios", element:<Funcionarios/>}
+    {path:"/funcionarios", element:<Funcionarios/>},
+    {path:"/responder", element:<Responder/>}
   ]}
 ])
 createRoot(document.getElementById('root')!).render(
