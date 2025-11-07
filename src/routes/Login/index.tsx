@@ -6,6 +6,7 @@ import type { LoginFormData, Usuario } from "../../types/loginFormData";
 export default function Login() {
   const navigate = useNavigate();
   const [exibeLoginNaoEncontrado, setExibeLoginNaoEncontrado] = useState<boolean>(false);
+  const [mostrarSenha, setMostrarSenha] = useState<boolean>(false);
 
   useEffect(() => {
     document.title = "Login de funcionários";
@@ -94,17 +95,48 @@ export default function Login() {
             <label htmlFor="senha" className="block text-sm font-medium mb-1 text-[#194737]">
               Senha
             </label>
-            <input
-              type="password"
-              id="senha"
-              placeholder="Digite sua senha"
-              maxLength={100}
-              {...register("senha", {
-                required: "Senha é obrigatória.",
-              })}
-              className={`w-full px-4 py-2 rounded-md bg-white border ${errors.senha ? "border-red-500" : "border-gray-300"
-                } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
-            />
+            <div className="relative">
+              <input
+                type={mostrarSenha ? "text" : "password"}
+                id="senha"
+                placeholder="Digite sua senha"
+                maxLength={100}
+                {...register("senha", {
+                  required: "Senha é obrigatória.",
+                })}
+                className={`w-full px-4 py-2 rounded-md bg-white border ${errors.senha ? "border-red-500" : "border-gray-300"
+                  } text-[#194737] focus:outline-none focus:ring-2 focus:ring-[#29966a]`}
+              />
+              <button
+                type="button"
+                onClick={() => setMostrarSenha((prev) => !prev)}
+                className="absolute right-3 top-2 p-1"
+                aria-label="Mostrar ou ocultar senha"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="#194737"
+                  className="w-5 h-5"
+                >
+                  {mostrarSenha ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12s-3.75 6.75-9.75 6.75S2.25 12 2.25 12zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 3l18 18M9.88 9.88a3.75 3.75 0 004.24 4.24M6.75 6.75C4.5 8.25 2.25 12 2.25 12s3.75 6.75 9.75 6.75c1.5 0 2.91-.33 4.2-.92M17.25 17.25C19.5 15.75 21.75 12 21.75 12s-3.75-6.75-9.75-6.75c-.84 0-1.65.11-2.42.31"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
             {errors.senha && (
               <p className="text-red-500 text-sm mt-1">{errors.senha.message}</p>
             )}
@@ -113,14 +145,14 @@ export default function Login() {
           <button
             type="submit"
             id="botaoLogin"
-            className="w-full bg-[#29966a] text-white py-2 rounded-md hover:bg-[#194737] transition-colors"
+            className="cursor-pointer w-full bg-[#29966a] text-white py-2 rounded-md hover:bg-[#194737] transition-colors"
           >
             Fazer Login
           </button>
 
           {exibeLoginNaoEncontrado && (
             <p className="text-red-500 text-sm mt-4 text-center">
-              Email ou senha incorretos ou não autorizado
+              Email ou senha incorretos!
             </p>
           )}
         </form>
