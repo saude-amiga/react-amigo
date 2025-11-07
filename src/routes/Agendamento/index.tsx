@@ -11,6 +11,8 @@ export default function Agendamento() {
     register,
     handleSubmit,
     reset,
+    setError,
+    clearErrors,
     formState: { errors, isValid },
   } = useForm<AgendamentoFormData>({
     mode: "onChange",
@@ -19,7 +21,34 @@ export default function Agendamento() {
 
   const [agendado, setAgendado] = useState(false);
 
+  const verificarPaciente = async (id: number) => {
+    try {
+      const resp = await fetch(`https://api-saude-amiga.onrender.com/paciente/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "chave-primaria",
+        },
+      });
+
+      return resp.ok;
+    } catch {
+      return false;
+    }
+  };
+
   const onSubmit = async (data: AgendamentoFormData) => {
+    clearErrors("pacienteId");
+
+    const pacienteExiste = await verificarPaciente(data.pacienteId);
+    if (!pacienteExiste) {
+      setError("pacienteId", {
+        type: "manual",
+        message: "Paciente não encontrado. Verifique o ID informado.",
+      });
+      return;
+    }
+
     try {
       const resp = await fetch("https://api-saude-amiga.onrender.com/agendamento", {
         method: "POST",
@@ -36,12 +65,8 @@ export default function Agendamento() {
 
       if (!resp.ok) throw new Error("Erro ao realizar agendamento.");
 
-      const resultado = await resp.json();
-      console.log("Agendamento realizado com sucesso:", resultado);
-
       setAgendado(true);
       reset();
-
       setTimeout(() => setAgendado(false), 10000);
     } catch (error) {
       console.error("Erro no agendamento:", error);
