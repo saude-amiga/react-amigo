@@ -133,6 +133,11 @@ react-amigo
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" width="30" alt="Vite"/> **Vite**
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="30" alt="TypeScript"/> **TypeScript**
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="30" alt="Tailwind CSS"/> **Tailwind CSS**
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="30" alt="Java"/> **Java**
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="30" alt="Vercel"/> **Vercel**
+- <img src="./src/img/icones/render.png" width="30" alt="Render"/> **Render**
+
+
 
 ## 👨‍💻 Integrantes
 
@@ -167,13 +172,8 @@ https://github.com/saude-amiga/react-amigo
 
 **Veja mais sobre os recursos do projeto no nosso vídeo!**
 
-https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa
+https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa - Sprint 3
 
 <a href="https://youtu.be/rqd--l7eBiY?si=Jx9gF7YtIU_pVCNa" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-Apresentação%20Saúde%20Amiga-ff0000?style=flat&logo=youtube&logoColor=white" width="20%"/>
-</a>
-
-
-
-
-
+</a> - Sprint 3
