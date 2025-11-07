@@ -181,7 +181,7 @@ export default function Responder() {
               <button
                 type="button"
                 onClick={() => navigate("/funcionarios")}
-                className="w-full sm:w-auto bg-gray-300 text-[#194737] m-4 py-2 px-4 rounded hover:bg-gray-400 transition"
+                className="cursor-pointer w-full sm:w-auto bg-gray-300 text-[#194737] m-4 py-2 px-4 rounded hover:bg-gray-400 transition"
               >
                 Voltar para Área de funcionários
               </button>
