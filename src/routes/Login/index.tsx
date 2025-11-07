@@ -113,7 +113,7 @@ export default function Login() {
           <button
             type="submit"
             id="botaoLogin"
-            className="w-full bg-[#29966a] text-white py-2 rounded-md hover:bg-[#194737] transition-colors"
+            className="cursor-pointer w-full bg-[#29966a] text-white py-2 rounded-md hover:bg-[#194737] transition-colors"
           >
             Fazer Login
           </button>
