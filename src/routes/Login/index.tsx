@@ -9,7 +9,12 @@ export default function Login() {
 
   useEffect(() => {
     document.title = "Login de funcionários";
-  }, []);
+
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      navigate("/funcionarios");
+    }
+  }, [navigate]);
 
   const {
     handleSubmit,
@@ -43,6 +48,7 @@ export default function Login() {
       const usuario: Usuario = await resp.json();
 
       if (usuario.funcionario) {
+        localStorage.setItem("authToken", usuario.token);
         setExibeLoginNaoEncontrado(false);
         navigate("/funcionarios");
       } else {
@@ -53,7 +59,6 @@ export default function Login() {
       alert("Erro no processo de login!");
     }
   };
-
 
   return (
     <main className="bg-[#ffffff] text-[#194737] min-h-200 flex items-center justify-center px-4 py-10">
