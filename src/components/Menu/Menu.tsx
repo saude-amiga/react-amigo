@@ -46,7 +46,6 @@ export default function Menu() {
             <Link to="/oficinas">Oficinas</Link>
             <Link to="/perguntas-frequentes">Perguntas(FAQ)</Link>
             <Link to="/contato">Contato</Link>
-            <Link to="/agendamento">Agendamento</Link>
           </nav>
         </div>
       )}
@@ -58,7 +57,6 @@ export default function Menu() {
         <Link to="/oficinas">Oficinas</Link>
         <Link to="/perguntas-frequentes">Perguntas(FAQ)</Link>
         <Link to="/contato">Contato</Link>
-        <Link to="/agendamento">Agendamentos</Link>
       </div>
     </div>
   );
