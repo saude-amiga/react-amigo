@@ -110,7 +110,7 @@ export default function Login() {
               <button
                 type="button"
                 onClick={() => setMostrarSenha((prev) => !prev)}
-                className="absolute right-3 top-2 p-1"
+                className="cursor-pointer absolute right-3 top-2 p-1"
                 aria-label="Mostrar ou ocultar senha"
               >
                 <svg
