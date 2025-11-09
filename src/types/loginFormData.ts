@@ -4,6 +4,7 @@ export type LoginFormData = {
 };
 
 export type Usuario = {
+  userId: number;
   token: string;
   email: string;
   senha: string;
