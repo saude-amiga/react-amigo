@@ -13,6 +13,7 @@ export default function Responder() {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors, isSubmitSuccessful },
   } = useForm<{ corpo: string; autorDaResposta: number }>({
     mode: "onChange",
@@ -26,9 +27,15 @@ export default function Responder() {
     document.title = "Responder Perguntas";
 
     const token = localStorage.getItem("authToken");
+    const funcionarioId = localStorage.getItem("funcionarioId");
+
     if (!token) {
       navigate("/login");
       return;
+    }
+
+    if (funcionarioId) {
+      setValue("autorDaResposta", parseInt(funcionarioId));
     }
 
     const buscarPerguntas = async () => {
@@ -51,7 +58,7 @@ export default function Responder() {
     };
 
     buscarPerguntas();
-  }, [navigate]);
+  }, [navigate, setValue]);
 
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -135,12 +142,12 @@ export default function Responder() {
               <input
                 type="number"
                 id="autorDaResposta"
-                placeholder="Digite seu ID de funcionário"
+                readOnly
                 {...register("autorDaResposta", {
                   required: "ID é obrigatório.",
                   min: { value: 1, message: "ID inválido." },
                 })}
-                className={`mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring ${
+                className={`mt-1 block w-full border rounded px-3 py-2 bg-gray-100 text-gray-700 focus:outline-none ${
                   errors.autorDaResposta ? "border-red-500" : "border-gray-300"
                 }`}
               />
@@ -174,17 +181,17 @@ export default function Responder() {
               >
                 Enviar Resposta
               </button>
-
             </div>
           </form>
         )}
-              <button
-                type="button"
-                onClick={() => navigate("/funcionarios")}
-                className="cursor-pointer w-full sm:w-auto bg-gray-300 text-[#194737] m-4 py-2 px-4 rounded hover:bg-gray-400 transition"
-              >
-                Voltar para Área de funcionários
-              </button>
+
+        <button
+          type="button"
+          onClick={() => navigate("/funcionarios")}
+          className="cursor-pointer w-full sm:w-auto bg-gray-300 text-[#194737] m-4 py-2 px-4 rounded hover:bg-gray-400 transition"
+        >
+          Voltar para Área de funcionários
+        </button>
       </section>
     </main>
   );
