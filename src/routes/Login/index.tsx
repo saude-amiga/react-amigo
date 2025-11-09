@@ -31,35 +31,38 @@ export default function Login() {
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    try {
-      const resp = await fetch("https://api-saude-amiga.onrender.com/usuario/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": "chave-primaria",
-        },
-        body: JSON.stringify({
-          email: data.email,
-          senha: data.senha,
-        }),
-      });
+  try {
+    const resp = await fetch("https://api-saude-amiga.onrender.com/usuario/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": "chave-primaria",
+      },
+      body: JSON.stringify({
+        email: data.email,
+        senha: data.senha,
+      }),
+    });
 
-      if (!resp.ok) throw new Error("Erro ao autenticar usuário.");
+    if (!resp.ok) throw new Error("Erro ao autenticar usuário.");
 
-      const usuario: Usuario = await resp.json();
+    const usuario: Usuario = await resp.json();
+    console.log("Resposta da API:", usuario);
 
-      if (usuario.funcionario) {
-        localStorage.setItem("authToken", usuario.token);
-        setExibeLoginNaoEncontrado(false);
-        navigate("/funcionarios");
-      } else {
-        setExibeLoginNaoEncontrado(true);
-      }
-    } catch (error) {
-      console.error("Erro no login:", error);
-      alert("Erro no processo de login!");
+    if (usuario.funcionario) {
+      localStorage.setItem("authToken", usuario.token);
+      localStorage.setItem("funcionarioId", usuario.userId.toString());
+      console.log("ID do funcionário logado:", usuario.userId);
+      setExibeLoginNaoEncontrado(false);
+      navigate("/funcionarios");
+    } else {
+      setExibeLoginNaoEncontrado(true);
     }
-  };
+  } catch (error) {
+    console.error("Erro no login:", error);
+    alert("Erro no processo de login!");
+  }
+};
 
   return (
     <main className="bg-[#ffffff] text-[#194737] min-h-200 flex items-center justify-center px-4 py-10">

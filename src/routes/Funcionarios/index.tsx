@@ -16,7 +16,7 @@ export default function Funcionarios() {
   }, [navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
+    localStorage.clear();
     navigate("/login");
   };
 
