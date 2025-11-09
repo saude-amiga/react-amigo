@@ -207,9 +207,7 @@ https://github.com/saude-amiga/react-amigo
 
 **Veja mais sobre os recursos do projeto no nosso vídeo!**
 
-AGUARDANDO LINK DA SPRINT 4
-
-<a href="" target="_blank">
+<a href="https://youtu.be/1k73Zl8_dWk" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-Apresentação%20Saúde%20Amiga-ff0000?style=flat&logo=youtube&logoColor=white" width="20%"/>
 </a>
 
